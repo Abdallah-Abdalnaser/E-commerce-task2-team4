@@ -1,1 +1,37 @@
-<p>header works!</p>
+<header>
+  <div class="container row">
+    <div class="col" id="logo">
+      <img src="/assets/images/Amazon.svg" alt="">
+    </div>
+    <div class="col" id="location">
+      <span>Deliver To</span>
+      <span>
+        <fa-icon [icon]="faLocationDot"></fa-icon>
+        Egypt
+      </span>
+    </div>
+    <div class="col" id="search">
+      <select name="categories" id="categories">
+        <optgroup>
+          <option value="All">All</option>
+        </optgroup>
+      </select>
+      <input type="search" name="productname" id="productname">
+      <button>
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+      </button>
+    </div>
+    <div class="col" id="lanuguage">test</div>
+    <div class="col" id="login">
+      <span>Hello, sign in</span>
+      <span>Account & Lists</span>
+    </div>
+    <div class="col" id="ReturnsOrders">
+      <span>Orders</span>
+    </div>
+    <div class="col" id="Cart">
+      <img src="/assets/images/cart.svg" alt="">
+      <span>Cart</span>
+    </div>
+  </div>
+</header>
