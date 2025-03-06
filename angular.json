@@ -37,9 +37,10 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -111,4 +112,6 @@
   "cli": {
     "analytics": "08176a9c-2df4-4077-be69-830e8f9805ff"
   }
+
 }
+

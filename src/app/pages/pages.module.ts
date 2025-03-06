@@ -13,11 +13,12 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     ProductsComponent,
     SingleProductComponent,
-    LoginComponent,
-    RegisterComponent
+   
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LoginComponent,
+    RegisterComponent
   ],
   exports: [
     HomeComponent,
