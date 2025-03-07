@@ -1,49 +1,259 @@
 header {
-  display: flex;
-  justify-content: center;
   background-color: var(--DarkBlue);
   color: var(--white);
+  padding: 0.6rem 1rem;
 }
 
-header .container {
+header .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  /* padding: 0px 2rem; */
 }
 
-header .container.row {}
-
-header .row .col  {}
+header .row .col  {
+  /* width: fit-content; */
+}
 
 header .row .col img {
 
 }
+#logo {
+  flex: 1;
+}
+
+#logo img {
+  width: 6rem;
+}
 
 #location {
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+  gap:0.4rem;
+  cursor: pointer;
 }
 
-#location span:first-of-type {
+#location fa-icon {
+  font-size: 1rem;
+}
+
+#location .info {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9rem;
+}
+
+#location .info span:first-of-type {
+  font-size: 0.8rem;
   font-weight: 300;
 }
 
-#location span:last-of-type {
+#location .info span:last-of-type {
+  font-weight: 600;
+}
+#search {
+  flex: 10;
+  align-items: center;
+}
+
+#search .categories  {
+  position: relative;
+}
+#search .categories::before  {
+  content: "";
+    position: absolute;
+    right: 0.4rem;
+    top: 52%;
+    transform: translateY(-50%);
+    border: 0.29rem;
+    border-style: solid;
+    border-color: var(--Gray) transparent transparent transparent;
+}
+
+#search .categories select {
+  appearance: none;
+  background-color: var(--Gray2);
+  padding: 0.7rem 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border: 0px;
+  outline: 0px;
+  color: var(--Gray);
+  font-size: 0.8rem;
+  cursor:pointer;
+}
+
+#search select optgroup {}
+
+#search select option {}
+
+#search input[type='search'] {
+  width: 100%;
+  padding: 0.55rem;
+  border: 0px;
+  outline: 0px;
+}
+#search button {
+  background-color: var(--Gold);
+  padding: 0.55rem 1.3rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  border: 0px;
+  outline: 0px;
+}
+#search button fa-iocn {
+  color: var(--balck);
+}
+#lanuguage {
+  position: relative;
+  width: 100%;
+  flex: 0.6;
+  cursor: pointer;
+}
+#lanuguage::before {
+  content: "";
+  position: absolute;
+  right: 0.6rem;
+  bottom: 3px;
+  border-width: 0.28rem;
+  border-style: solid;
+  border-color: var(--Gray2) transparent transparent transparent;
+}
+
+#lanuguage:hover > form {
+  display: block;
+}
+
+#lanuguage .info {
+  display: flex;
+  align-items: center;
+}
+#lanuguage .info img {
+  width: 1.3rem;
+  margin-right: 0.2rem;
+}
+
+#lanuguage .info span {
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
+#lanuguage form {
+  display: none;
+  position: absolute;
+  top:calc(100% + 1rem);
+  background-color: var(--white);
+  color: var(--Gray);
+  width: 10rem;
+  border-radius: 0.2rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+#lanuguage form::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 0.3rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+#lanuguage form .ar {}
+
+#lanuguage form .en {}
+
+#login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1.2;
+  line-height: 1;
+}
+#login:hover > .signin {
+  display: block;
+}
+#login span:first-of-type {
+  font-weight: 200;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#login span:last-of-type {
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#login .signin {
+  display: none;
+  position: absolute;
+  top: 130%;
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+  border-radius: 0.2rem;
+}
+#login .signin::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 0.3rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+#login .signin button {
+  background-color: var(--yellow);
+  padding: 0.5rem 4rem;
+  color: var(--black);
+  border: 0px;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  width: 12rem;
+}
+
+#ReturnsOrders {
+  flex: 0;
+}
+
+#ReturnsOrders a {
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+}
+
 #Cart {
+  position: relative;
   display: flex;
   align-items: flex-end;
+  flex: 0;
 }
 
 #Cart img {
-  width: 2rem;
-  height: 2rem;
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+#Cart .counter {
+  position: absolute;
+  top: -7px;
+  left: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+#Cart .name {
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 #search {
   display: flex;
-
 }
+
 #productname {}
