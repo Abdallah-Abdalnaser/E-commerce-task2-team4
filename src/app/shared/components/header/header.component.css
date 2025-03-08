@@ -8,18 +8,21 @@ header .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0px 2rem; */
+  margin-right: 0px;
 }
 
-header .row .col  {
-  /* width: fit-content; */
+header .row .left {
+  flex: 0.6;
 }
-
-header .row .col img {
-
+header .row .middel {
+  flex: 2.5;
 }
-#logo {
+header .row .right {
   flex: 1;
+}
+
+#logo {
+  /* flex: 1; */
 }
 
 #logo img {
@@ -29,7 +32,7 @@ header .row .col img {
 #location {
   display: flex;
   align-items: flex-end;
-  flex: 1;
+  /* flex: 1; */
   gap:0.4rem;
   cursor: pointer;
 }
@@ -53,13 +56,14 @@ header .row .col img {
   font-weight: 600;
 }
 #search {
-  flex: 10;
+  /* flex: 10; */
   align-items: center;
 }
 
 #search .categories  {
   position: relative;
 }
+
 #search .categories::before  {
   content: "";
     position: absolute;
@@ -84,16 +88,13 @@ header .row .col img {
   cursor:pointer;
 }
 
-#search select optgroup {}
-
-#search select option {}
-
 #search input[type='search'] {
   width: 100%;
   padding: 0.55rem;
   border: 0px;
   outline: 0px;
 }
+
 #search button {
   background-color: var(--Gold);
   padding: 0.55rem 1.3rem;
@@ -102,19 +103,22 @@ header .row .col img {
   border: 0px;
   outline: 0px;
 }
+
 #search button fa-iocn {
   color: var(--balck);
 }
+
 #lanuguage {
   position: relative;
   width: 100%;
-  flex: 0.6;
+  /* flex: 0.6; */
   cursor: pointer;
 }
+
 #lanuguage::before {
   content: "";
   position: absolute;
-  right: 0.6rem;
+  right: 0rem;
   bottom: 3px;
   border-width: 0.28rem;
   border-style: solid;
@@ -129,6 +133,7 @@ header .row .col img {
   display: flex;
   align-items: center;
 }
+
 #lanuguage .info img {
   width: 1.3rem;
   margin-right: 0.2rem;
@@ -161,20 +166,18 @@ header .row .col img {
   border-color: transparent transparent var(--white) transparent;
 }
 
-#lanuguage form .ar {}
-
-#lanuguage form .en {}
-
 #login {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1.2;
+  flex: 3;
   line-height: 1;
 }
+
 #login:hover > .signin {
   display: block;
 }
+
 #login span:first-of-type {
   font-weight: 200;
   font-size: 0.9rem;
@@ -196,6 +199,7 @@ header .row .col img {
   box-shadow: 0px 0px 2px #ccc;
   border-radius: 0.2rem;
 }
+
 #login .signin::before {
   content: "";
   position: absolute;
@@ -217,7 +221,7 @@ header .row .col img {
 }
 
 #ReturnsOrders {
-  flex: 0;
+  /* flex: 0; */
 }
 
 #ReturnsOrders a {
@@ -230,7 +234,7 @@ header .row .col img {
   position: relative;
   display: flex;
   align-items: flex-end;
-  flex: 0;
+  /* flex: 0; */
 }
 
 #Cart img {
@@ -255,5 +259,3 @@ header .row .col img {
 #search {
   display: flex;
 }
-
-#productname {}

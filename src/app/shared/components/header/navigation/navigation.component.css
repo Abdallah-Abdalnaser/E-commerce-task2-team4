@@ -1,0 +1,25 @@
+nav {
+  background-color: var(--BLue);
+}
+nav ul {
+  display: flex;
+  margin: 0px;
+}
+nav ul li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: var(--white);
+  padding: 0.5rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+nav ul li fa-icon {
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+}
+nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+}

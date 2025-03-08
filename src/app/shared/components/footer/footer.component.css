@@ -1,0 +1,87 @@
+footer {}
+footer button {
+  width: 100%;
+  border: 0px;
+  background-color: var(--Blue2);
+  color: var(--white);
+  padding: 1rem 0rem;
+  transition: 0.3s;
+}
+
+footer .row {
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--BLue);
+  color: var(--white);
+}
+footer .row:first-of-type {
+  border-bottom: 1px solid var(--Gray);
+  margin-right: 0px;
+}
+footer .row .col {
+  flex:0.17;
+  margin: 2rem 0rem;
+}
+footer .row .col h1 {
+  font-size: 1.3rem;
+}
+footer .row .col ul {
+  padding: 0px;
+}
+footer .row .col ul li {
+  list-style: none;
+}
+footer .row .col ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+footer .row .col ul li a:hover {
+  text-decoration: underline;
+  color: var(--Gold);
+}
+
+footer .row:last-of-type {
+  align-items: center;
+  margin-right: 0px;
+}
+
+footer .row:last-of-type > img {
+  width: 6rem;
+}
+
+footer .row:last-of-type .info {
+  margin-right: 0px;
+  padding: 0px;
+  gap: 0.5rem;
+}
+footer .row:last-of-type .info span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+footer .row:last-of-type .info fa-icon {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+footer .row:last-of-type .info .language {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--Gray);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+footer .row:last-of-type .info .country {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--Gray);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+footer .row:last-of-type .info .country > img {
+  width: 1.4rem;
+  border: 2px solid var(--Gray);
+  margin-right: 0.5rem;
+}
