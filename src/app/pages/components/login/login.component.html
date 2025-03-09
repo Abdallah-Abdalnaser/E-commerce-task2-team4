@@ -36,7 +36,7 @@
           <div class="mb-3">
             <label for="password" class="form-label fw-bold">Password</label>
             <input type="password" class="form-control" id="password" formControlName="password" required>
-            <div class="invalid-feedback" *ngIf="passwordForm.get('password')?.touched && passwordForm.get('password')?.invalid">
+            <div class="invalid-feedback mx-auto" *ngIf="passwordForm.get('password')?.touched && passwordForm.get('password')?.invalid">
               Password must be at least 6 characters long.
             </div>
             <a href="#" (click)="showForgotPasswordForm($event)" class="small d-block mt-1">Forgot your password?</a>
@@ -54,7 +54,7 @@
     </div>
   
     <!-- Forgot Password Container -->
-    <div id="forgot-password-container" class="form-container border rounded-3 p-4 bg-white" [class.d-none]="!showForgotPassword">
+    <div id="forgot-password-container" class="form-container mx-auto border rounded-3 p-4 bg-white" [class.d-none]="!showForgotPassword">
       <h2>Password assistance</h2>
       <p class="small mb-3">Enter the email address or mobile phone number associated with your Amazon account.</p>
       <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPasswordSubmit()" novalidate>
