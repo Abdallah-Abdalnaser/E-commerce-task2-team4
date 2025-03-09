@@ -72,6 +72,6 @@ export class LoginComponent {
   }
 
   navigateToSignup() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['Register']);
   }
 }

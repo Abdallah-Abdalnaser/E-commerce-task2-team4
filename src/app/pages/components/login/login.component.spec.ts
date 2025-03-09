@@ -73,6 +73,6 @@ describe('LoginComponent', () => {
   it('should navigate to signup page', () => {
     const routerSpy = spyOn(component['router'], 'navigate');
     component.navigateToSignup();
-    expect(routerSpy).toHaveBeenCalledWith(['/register']);
+    expect(routerSpy).toHaveBeenCalledWith(['/Register']);
   });
 });

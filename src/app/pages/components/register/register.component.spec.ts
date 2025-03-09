@@ -71,6 +71,6 @@ describe('RegisterComponent', () => {
   it('should navigate to sign-in page', () => {
     const routerSpy = spyOn(component['router'], 'navigate');
     component.navigateToSignIn();
-    expect(routerSpy).toHaveBeenCalledWith(['/signin']);
+    expect(routerSpy).toHaveBeenCalledWith(['/login']);
   });
 });
