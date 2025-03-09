@@ -46,6 +46,7 @@
   margin: 0px;
   padding: 0px;
   width:fit-content;
+  flex-wrap: wrap;
 }
 
 .row ul li {

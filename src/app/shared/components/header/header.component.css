@@ -1,7 +1,7 @@
 header {
   background-color: var(--DarkBlue);
   color: var(--white);
-  padding: 0.6rem 1rem;
+  padding: 0.6rem;
 }
 
 header .row {
@@ -21,14 +21,41 @@ header .row .right {
   flex: 1;
 }
 
+
+
 #logo {
   /* flex: 1; */
+  width: fit-content;
 }
 
 #logo img {
   width: 6rem;
 }
 
+header .row .left .loginandcart {
+  display: none;
+  align-items: center;
+  width: fit-content;
+}
+
+header .row .left .loginandcart > #login {
+  flex: 0.2;
+}
+
+header .row .left .loginandcart > #login a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+}
+
+header .row .left .loginandcart > #login a fa-icon:first-of-type {
+  font-size: 0.7rem;
+  margin: 0px 0.2rem;
+}
+header .row .left .loginandcart > #login a fa-icon:last-of-type {
+  font-size: 1.4rem;
+}
 #location {
   display: flex;
   align-items: flex-end;
@@ -173,6 +200,7 @@ header .row .right {
   flex-direction: column;
   flex: 3;
   line-height: 1;
+  min-width: 8rem;
 }
 
 #login:hover > .signin {
@@ -260,4 +288,89 @@ header .row .right {
 
 #search {
   display: flex;
+}
+
+
+/* responsive */
+
+@media (max-width:900px) {
+  header .row {
+    flex-direction: column;
+  }
+  header .row .left {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header .row .middel {
+    order: 3;
+    flex: 0;
+    margin-top: 0.8rem;
+  }
+
+  header .row .right {
+    display: none;
+    order: 2;
+  }
+  #location {
+    display: none;
+  }
+  #login {
+    min-width: 6rem;
+  }
+  #ReturnsOrders {
+    display: none;
+  }
+  #Cart .counter {
+    left: 14px;
+  }
+
+  header .row .left .loginandcart {
+    display: flex;
+  }
+}
+
+@media (max-width:1492px) {
+  header .row .middel {
+    flex: 2.2;
+  }
+}
+@media (max-width:1385px) {
+  header .row .middel {
+    flex: 2;
+  }
+}
+@media (max-width:1315px) {
+  header .row .middel {
+    flex: 1.5;
+  }
+}
+@media (max-width:1139px) {
+  header .row .middel {
+    flex: 1;
+  }
+}
+@media (max-width:962px) {
+  header .row .middel {
+    flex: 0.6;
+  }
+  #Cart .counter {
+    left: 11px;
+    top: -8px;
+  }
+  #Cart img {
+    width:1.8rem ;
+    height:1.8rem ;
+  }
+  header .row .left .loginandcart a {
+    font-size: 0.8rem;
+  }
+  header .row .left .loginandcart a fa-icon:last-of-type {
+    font-size: 1rem !important;
+  }
+  #login {
+    min-width: 5rem;
+  }
 }

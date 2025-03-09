@@ -1,9 +1,17 @@
 nav {
   background-color: var(--BLue);
+  overflow-x: scroll;
+  padding: 0px;
 }
+
+nav::-webkit-scrollbar {
+  height: 0px;
+}
+
 nav ul {
   display: flex;
   margin: 0px;
+  padding: 0px;
 }
 nav ul li {
   display: flex;
@@ -14,6 +22,7 @@ nav ul li {
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
+  min-width: fit-content;
 }
 nav ul li fa-icon {
   font-size: 1.2rem;

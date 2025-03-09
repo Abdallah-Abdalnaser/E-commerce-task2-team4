@@ -27,6 +27,7 @@
 }
 .row .col ul li {
   list-style: none;
+  min-width: 10rem;
 }
 .row .col ul li a {
   text-decoration: none;

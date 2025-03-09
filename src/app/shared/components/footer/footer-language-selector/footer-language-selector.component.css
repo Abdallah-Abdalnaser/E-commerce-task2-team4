@@ -15,9 +15,10 @@
 
 }
 
-.row > img {
-  width: 6rem;
+.row .col img {
+  width: 5rem;
 }
+
 
 .row .info {
   /* margin-right: 0px; */
@@ -44,6 +45,7 @@
   padding: 0.5rem;
   padding-right: 3rem;
   cursor: pointer;
+  margin: 0px;
 }
 
 .row .info .language::before,
