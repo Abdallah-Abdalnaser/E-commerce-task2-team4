@@ -1,0 +1,42 @@
+.row {
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--BLue);
+  color: var(--white);
+  margin-right: 0px;
+}
+.row {
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--BLue);
+  color: var(--white);
+  margin-right: 0px;
+}
+.row:first-of-type {
+  border-bottom: 1px solid var(--Gray);
+}
+.row .col {
+  flex:0.17;
+  margin: 2rem 0rem;
+}
+.row .col h1 {
+  font-size: 1.3rem;
+}
+.row .col ul {
+  padding: 0px;
+}
+.row .col ul li {
+  list-style: none;
+}
+.row .col ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.row .col ul li a:hover {
+  text-decoration: underline;
+  color: var(--Gold);
+}

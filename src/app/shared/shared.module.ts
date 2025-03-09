@@ -4,6 +4,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavigationComponent } from './components/header/navigation/navigation.component';
+import { FooterLinksComponent } from './components/footer/footer-links/footer-links.component';
+import { FooterLanguageSelectorComponent } from './components/footer/footer-language-selector/footer-language-selector.component';
+import { FooterInfoComponent } from './components/footer/footer-info/footer-info.component';
 
 
 
@@ -11,7 +14,10 @@ import { NavigationComponent } from './components/header/navigation/navigation.c
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterLinksComponent,
+    FooterLanguageSelectorComponent,
+    FooterInfoComponent
   ],
   imports: [
     CommonModule,

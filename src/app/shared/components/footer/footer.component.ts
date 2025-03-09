@@ -8,5 +8,5 @@ import { faGlobe, IconDefinition } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  faGlobe:IconDefinition= faGlobe;
+
 }

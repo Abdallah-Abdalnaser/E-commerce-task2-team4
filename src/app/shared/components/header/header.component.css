@@ -127,6 +127,7 @@ header .row .right {
 
 #lanuguage:hover > form {
   display: block;
+  z-index: 2;
 }
 
 #lanuguage .info {
@@ -176,6 +177,7 @@ header .row .right {
 
 #login:hover > .signin {
   display: block;
+  z-index: 2;
 }
 
 #login span:first-of-type {
