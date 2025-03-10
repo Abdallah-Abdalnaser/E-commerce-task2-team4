@@ -15,7 +15,6 @@ import {register as registerSwiperElements} from 'swiper/element/bundle';
 import { SliderComponent } from './components/home/slider/slider.component'
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 registerSwiperElements();
 
 
@@ -29,7 +28,7 @@ registerSwiperElements();
     StarRatingComponent,
     CategoryFilterPipe,
     BasicStarComponent,
-    SliderComponent
+    SliderComponent,
   ],
   imports: [
     ReactiveFormsModule,

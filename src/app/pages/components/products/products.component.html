@@ -1,12 +1,13 @@
-<div class="product-container">
+<div class="container product-container">
   <div class="select-product" >
   <h1>Delivery Day</h1>
   <div class="radio">
-  <input type="radio" > <p>Get It in 2 Days</p>
+    <input type="radio">
+    <p>Get It in 2 Days</p>
   </div>
-  <h2>Customer Reviews</h2>
+  <h1>Customer Reviews</h1>
   <div class="rate-first">
-      <app-star-rating [rating]="rating" style="margin-top: 10px;"></app-star-rating>
+      <app-star-rating [rating]="rating"></app-star-rating>
       <p>&UP</p>
   </div>
     <div class="brand-filter" >
@@ -27,10 +28,8 @@
     </div>
     <div class="price-filter" >
       <h1>Price Range</h1>
-
       <label >
         <input  type="radio" [(ngModel)]="selectedPriceRange" value="all" (change)="filterProductsprice()" checked />
-
         All
       </label>
 
@@ -54,11 +53,12 @@
   <div class="product-section" *ngIf="filteredProducts.length > 0">
     <div class="cards-container">
       <div class="cards" *ngFor="let product of filteredProducts" (click)="navigateToProduct(product.id)">
-        <img style="width: 255px; height: 195px;" [src]="product.images[0]" alt="{{ product.title }}">
+        <figure>
+          <img [src]="product.images[0]" alt="{{ product.title }}">
+        </figure>
         <h2>{{ product.description }}</h2>
         <div class="rate">
           <app-basic-star [rating]="product.rating" style="margin-top:10px;"></app-basic-star>
-
           <select class="quantity-select"></select>
           <p class="rating-text">{{ product.minimumOrderQuantity }}</p>
         </div>
