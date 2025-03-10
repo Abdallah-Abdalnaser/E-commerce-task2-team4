@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BasicStarComponent } from './components/basic-star/basic-star.component';
 import {register as registerSwiperElements} from 'swiper/element/bundle';
 import { SliderComponent } from './components/home/slider/slider.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 registerSwiperElements();
@@ -28,12 +29,13 @@ registerSwiperElements();
     StarRatingComponent,
     CategoryFilterPipe,
     BasicStarComponent,
+    SliderComponent
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     AppRoutingModule,
     FormsModule
-    SliderComponent
   ],
   exports: [
     HomeComponent,
