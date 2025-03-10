@@ -1,1 +1,73 @@
-<p>register works!</p>
+<div class="container text-center">
+    <div class="logo mb-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="logo-img">
+      <b>.in</b>
+    </div>
+  
+    <div class="form-container mx-auto border border-2 rounded-3 p-4 bg-white">
+      <!-- Step 1: Basic Info -->
+      <div *ngIf="currentStep === 1">
+        <h2>Create Account</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onStep1Submit()" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Your name</label>
+            <input type="text" class="form-control border-2 rounded-3" id="name" formControlName="name" required>
+            <div class="invalid-feedback" *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid">
+              Please enter your full name.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label fw-bold">Mobile phone number</label>
+            <input type="tel" class="form-control border-2 rounded-3" id="phone" formControlName="phone" required>
+            <div class="invalid-feedback" *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid">
+              Please enter a valid 10-digit phone number.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label fw-bold">Password</label>
+            <input type="password" class="form-control border-2 rounded-3" id="password" formControlName="password" required>
+            <div class="invalid-feedback" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+              Password must be at least 6 characters long.
+            </div>
+            <div class="password-hint">Passwords must be at least 6 characters.</div>
+          </div>
+          <button type="submit" class="btn btn-amazon w-100 border-2 rounded-3" [disabled]="registerForm.invalid"><b>Verify Mobile Number</b></button>
+        </form>
+        <p class="small mt-3"><b>By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</b></p>
+      </div>
+  
+      <!-- Step 2: Phone Verification -->
+      <div *ngIf="currentStep === 2">
+        <h2>Verify mobile number</h2>
+        <p class="small mb-3">We'll send you a code to verify your number.</p>
+        <form [formGroup]="verifyForm" (ngSubmit)="onStep2Submit()" novalidate>
+          <div class="mb-2">
+            <label class="form-label fw-bold">Mobile phone number</label>
+            <p class="mb-1 fw-bold">{{ registerForm.get('phone')?.value }}</p>
+            <a href="#" (click)="changePhone($event)" class="small">Change</a>
+          </div>
+          <div class="mb-3">
+            <label for="verification-code" class="form-label fw-bold">Verification code</label>
+            <input type="text" class="form-control border-2 rounded-3" id="verification-code" formControlName="code" required>
+            <div class="invalid-feedback" *ngIf="verifyForm.get('code')?.touched && verifyForm.get('code')?.invalid">
+              Please enter a valid 6-digit code.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-amazon w-100 border-2 rounded-3" [disabled]="verifyForm.invalid">Verify</button>
+        </form>
+        <p class="small mt-3">Didn't receive a code? <a href="#" (click)="resendCode($event)">Resend</a></p>
+      </div>
+    </div>
+  
+    <div class="already-have-account mt-4">
+      <span class="d-block mb-2">Already have an account?</span>
+      <button class="btn btn-signin border-3 rounded-3" (click)="navigateToSignIn()">Sign in</button>
+    </div>
+  
+    <div class="footer mt-3">
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996-2025, Amazon.com, Inc. or its affiliates</p>
+    </div>
+  </div>

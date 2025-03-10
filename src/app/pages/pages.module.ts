@@ -21,7 +21,9 @@ registerSwiperElements();
     SliderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LoginComponent,
+    RegisterComponent
   ],
   exports: [
     HomeComponent,
