@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {  CUSTOM_ELEMENTS_SCHEMA,NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -11,7 +11,11 @@ import { CategoryFilterPipe } from './pipes/category-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BasicStarComponent } from './components/basic-star/basic-star.component';
+import {register as registerSwiperElements} from 'swiper/element/bundle';
+import { SliderComponent } from './components/home/slider/slider.component'
 
+
+registerSwiperElements();
 
 
 @NgModule({
@@ -26,7 +30,10 @@ import { BasicStarComponent } from './components/basic-star/basic-star.component
     BasicStarComponent,
   ],
   imports: [
-    CommonModule,AppRoutingModule,FormsModule
+    CommonModule,
+    AppRoutingModule,
+    FormsModule
+    SliderComponent
   ],
   exports: [
     HomeComponent,
@@ -34,6 +41,7 @@ import { BasicStarComponent } from './components/basic-star/basic-star.component
     SingleProductComponent,
     LoginComponent,
     RegisterComponent,StarRatingComponent,BasicStarComponent
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PagesModule { }

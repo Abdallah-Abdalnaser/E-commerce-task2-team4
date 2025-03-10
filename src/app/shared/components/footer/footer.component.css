@@ -1,0 +1,190 @@
+
+footer button {
+  width: 100%;
+  border: 0px;
+  background-color: var(--Blue2);
+  color: var(--white);
+  padding: 1rem 0rem;
+  transition: 0.3s;
+}
+
+footer .row {
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--BLue);
+  color: var(--white);
+  margin-right: 0px;
+}
+footer .row:first-of-type {
+  border-bottom: 1px solid var(--Gray);
+}
+footer .row .col {
+  flex:0.17;
+  margin: 2rem 0rem;
+}
+footer .row .col h1 {
+  font-size: 1.3rem;
+}
+footer .row .col ul {
+  padding: 0px;
+}
+footer .row .col ul li {
+  list-style: none;
+}
+footer .row .col ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+footer .row .col ul li a:hover {
+  text-decoration: underline;
+  color: var(--Gold);
+}
+
+/* footer .row:nth-child(3) {
+  align-items: center;
+
+}
+
+footer .row:nth-child(3) > img {
+  width: 6rem;
+}
+
+footer .row:nth-child(3) .info {
+  margin-right: 0px;
+  padding: 0px;
+  gap: 0.5rem;
+}
+
+footer .row:nth-child(3) .info span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+footer .row:nth-child(3) .info fa-icon {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+footer .row:nth-child(3) .info .language ,
+footer .row:nth-child(3) .info .country {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--Gray);
+  padding: 0.5rem;
+  padding-right: 3rem;
+  cursor: pointer;
+}
+
+footer .row:nth-child(3) .info .language::before,
+footer .row:nth-child(3) .info .language::after {
+  content: '';
+  position: absolute;
+  border-width: 0.3rem;
+  border-style: solid;
+  right: 0.5rem;
+}
+
+footer .row:nth-child(3) .info .language::before {
+  top: 15%;
+  border-color:  transparent transparent var(--Gray) transparent;
+}
+
+footer .row:nth-child(3) .info .language::after {
+  top: 60%;
+  border-color: var(--Gray) transparent transparent transparent;
+}
+
+footer .row:nth-child(3) .info .language form {
+  display: none;
+  position: absolute;
+  top:calc(100% + 1rem);
+  background-color: var(--white);
+  color: var(--Gray);
+  width: 10rem;
+  border-radius: 0.2rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+footer .row:nth-child(3) .info .language form::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 5.6rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+footer .row:nth-child(3) .info .language:hover > form {
+  display: block;
+}
+
+footer .row:nth-child(3) .info .country > img {
+  width: 1.4rem;
+  border: 2px solid var(--Gray);
+  margin-right: 0.5rem;
+} */
+
+/* footer > .row:nth-child(4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--DarkBlue);
+}
+
+footer > .row:nth-child(4) ul {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  width:fit-content;
+}
+
+footer > .row:nth-child(4) ul li {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  max-width: 10rem;
+}
+
+footer > .row:nth-child(4) ul li a {
+  display: block;
+  color: var(--white);
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer > .row:nth-child(4) ul li a:hover {
+  text-decoration: underline;
+}
+
+
+footer > .row:nth-child(4) ul li a span {
+  font-size: 0.8rem;
+  display: block;
+}
+
+footer > .row:nth-child(4) ul li a span:first-of-type {
+  font-weight: 600;
+}
+
+footer > .row:nth-child(4) ul li a span:last-of-type {
+  font-weight: 200;
+}
+footer > .row:nth-child(4) ul:last-of-type li a {
+  display: block;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+}
+footer > .row:nth-child(4) > span {
+  font-size: 0.8rem;
+  text-align: center;
+  padding-bottom: 1rem;
+} */

@@ -1,0 +1,100 @@
+.row {
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--BLue);
+  color: var(--white);
+  margin-right: 0px;
+}
+
+.row .col {
+  flex:0.17;
+  margin: 2rem 0rem;
+}
+.row {
+  align-items: center;
+
+}
+
+.row .col img {
+  width: 5rem;
+}
+
+
+.row .info {
+  /* margin-right: 0px; */
+  padding: 0px;
+  gap: 0.5rem;
+}
+
+.row .info span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.row .info fa-icon {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.row .info .language ,
+.row .info .country {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--Gray);
+  padding: 0.5rem;
+  padding-right: 3rem;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.row .info .language::before,
+.row .info .language::after {
+  content: '';
+  position: absolute;
+  border-width: 0.3rem;
+  border-style: solid;
+  right: 0.5rem;
+}
+
+.row .info .language::before {
+  top: 15%;
+  border-color:  transparent transparent var(--Gray) transparent;
+}
+
+.row .info .language::after {
+  top: 60%;
+  border-color: var(--Gray) transparent transparent transparent;
+}
+
+.row .info .language form {
+  display: none;
+  position: absolute;
+  top:calc(100% + 1rem);
+  background-color: var(--white);
+  color: var(--Gray);
+  width: 10rem;
+  border-radius: 0.2rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+.row .info .language form::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 5.6rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+.row .info .language:hover > form {
+  display: block;
+}
+
+.row .info .country > img {
+  width: 1.4rem;
+  border: 2px solid var(--Gray);
+  margin-right: 0.5rem;
+}

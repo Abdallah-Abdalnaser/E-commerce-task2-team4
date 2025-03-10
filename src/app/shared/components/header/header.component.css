@@ -1,0 +1,376 @@
+header {
+  background-color: var(--DarkBlue);
+  color: var(--white);
+  padding: 0.6rem;
+}
+
+header .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+}
+
+header .row .left {
+  flex: 0.6;
+}
+header .row .middel {
+  flex: 2.5;
+}
+header .row .right {
+  flex: 1;
+}
+
+
+
+#logo {
+  /* flex: 1; */
+  width: fit-content;
+}
+
+#logo img {
+  width: 6rem;
+}
+
+header .row .left .loginandcart {
+  display: none;
+  align-items: center;
+  width: fit-content;
+}
+
+header .row .left .loginandcart > #login {
+  flex: 0.2;
+}
+
+header .row .left .loginandcart > #login a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+}
+
+header .row .left .loginandcart > #login a fa-icon:first-of-type {
+  font-size: 0.7rem;
+  margin: 0px 0.2rem;
+}
+header .row .left .loginandcart > #login a fa-icon:last-of-type {
+  font-size: 1.4rem;
+}
+#location {
+  display: flex;
+  align-items: flex-end;
+  /* flex: 1; */
+  gap:0.4rem;
+  cursor: pointer;
+}
+
+#location fa-icon {
+  font-size: 1rem;
+}
+
+#location .info {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9rem;
+}
+
+#location .info span:first-of-type {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+#location .info span:last-of-type {
+  font-weight: 600;
+}
+#search {
+  /* flex: 10; */
+  align-items: center;
+}
+
+#search .categories  {
+  position: relative;
+}
+
+#search .categories::before  {
+  content: "";
+    position: absolute;
+    right: 0.4rem;
+    top: 52%;
+    transform: translateY(-50%);
+    border: 0.29rem;
+    border-style: solid;
+    border-color: var(--Gray) transparent transparent transparent;
+}
+
+#search .categories select {
+  appearance: none;
+  background-color: var(--Gray2);
+  padding: 0.7rem 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border: 0px;
+  outline: 0px;
+  color: var(--Gray);
+  font-size: 0.8rem;
+  cursor:pointer;
+}
+
+#search input[type='search'] {
+  width: 100%;
+  padding: 0.55rem;
+  border: 0px;
+  outline: 0px;
+}
+
+#search button {
+  background-color: var(--Gold);
+  padding: 0.55rem 1.3rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  border: 0px;
+  outline: 0px;
+}
+
+#search button fa-iocn {
+  color: var(--balck);
+}
+
+#lanuguage {
+  position: relative;
+  width: 100%;
+  /* flex: 0.6; */
+  cursor: pointer;
+}
+
+#lanuguage::before {
+  content: "";
+  position: absolute;
+  right: 0rem;
+  bottom: 3px;
+  border-width: 0.28rem;
+  border-style: solid;
+  border-color: var(--Gray2) transparent transparent transparent;
+}
+
+#lanuguage:hover > form {
+  display: block;
+  z-index: 2;
+}
+
+#lanuguage .info {
+  display: flex;
+  align-items: center;
+}
+
+#lanuguage .info img {
+  width: 1.3rem;
+  margin-right: 0.2rem;
+}
+
+#lanuguage .info span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#lanuguage form {
+  display: none;
+  position: absolute;
+  top:calc(100% + 1rem);
+  background-color: var(--white);
+  color: var(--Gray);
+  width: 10rem;
+  border-radius: 0.2rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+#lanuguage form::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 0.3rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+#login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  line-height: 1;
+  min-width: 8rem;
+}
+
+#login:hover > .signin {
+  display: block;
+  z-index: 2;
+}
+
+#login span:first-of-type {
+  font-weight: 200;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#login span:last-of-type {
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#login .signin {
+  display: none;
+  position: absolute;
+  top: 130%;
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+  border-radius: 0.2rem;
+}
+
+#login .signin::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 0.3rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+#login .signin button {
+  background-color: var(--yellow);
+  padding: 0.5rem 4rem;
+  color: var(--black);
+  border: 0px;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  width: 12rem;
+}
+
+#ReturnsOrders {
+  /* flex: 0; */
+}
+
+#ReturnsOrders a {
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+}
+
+#Cart {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  /* flex: 0; */
+}
+
+#Cart img {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+#Cart .counter {
+  position: absolute;
+  top: -7px;
+  left: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+#Cart .name {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#search {
+  display: flex;
+}
+
+
+/* responsive */
+
+@media (max-width:900px) {
+  header .row {
+    flex-direction: column;
+  }
+  header .row .left {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header .row .middel {
+    order: 3;
+    flex: 0;
+    margin-top: 0.8rem;
+  }
+
+  header .row .right {
+    display: none;
+    order: 2;
+  }
+  #location {
+    display: none;
+  }
+  #login {
+    min-width: 6rem;
+  }
+  #ReturnsOrders {
+    display: none;
+  }
+  #Cart .counter {
+    left: 14px;
+  }
+
+  header .row .left .loginandcart {
+    display: flex;
+  }
+}
+
+@media (max-width:1492px) {
+  header .row .middel {
+    flex: 2.2;
+  }
+}
+@media (max-width:1385px) {
+  header .row .middel {
+    flex: 2;
+  }
+}
+@media (max-width:1315px) {
+  header .row .middel {
+    flex: 1.5;
+  }
+}
+@media (max-width:1139px) {
+  header .row .middel {
+    flex: 1;
+  }
+}
+@media (max-width:962px) {
+  header .row .middel {
+    flex: 0.6;
+  }
+  #Cart .counter {
+    left: 11px;
+    top: -8px;
+  }
+  #Cart img {
+    width:1.8rem ;
+    height:1.8rem ;
+  }
+  header .row .left .loginandcart a {
+    font-size: 0.8rem;
+  }
+  header .row .left .loginandcart a fa-icon:last-of-type {
+    font-size: 1rem !important;
+  }
+  #login {
+    min-width: 5rem;
+  }
+}

@@ -5,20 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
+
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { ProductServiceService } from './core/services/product-service.service';
 import { RouterLink } from '@angular/router';
 import { ProductsComponent } from './pages/components/products/products.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    PagesModule
+    PagesModule,
+    FontAwesomeModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),ProductServiceService,provideHttpClient()

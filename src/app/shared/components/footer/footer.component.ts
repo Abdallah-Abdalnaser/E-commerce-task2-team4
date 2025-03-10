@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faGlobe, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
