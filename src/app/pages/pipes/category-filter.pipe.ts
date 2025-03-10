@@ -1,4 +1,3 @@
-// category-filter.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 import { Product } from '../../core/interfaces/Product';
 

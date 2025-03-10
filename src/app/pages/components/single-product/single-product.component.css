@@ -1,354 +1,356 @@
+.productcontainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .product-section {
-  display: flex; /* Use flexbox for layout */
-  align-items: flex-start; /* Align items to the top */
-  margin: 20px; /* Margin around the section */
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: 20px;
 }
 hr {
-  border: none; /* Remove default border */
-  height: 2px; /* Set height */
-  background-color: #C6C6C6; /* Set color */
-  margin: 20px 0; /* Add space above and below the line */
+  border: none;
+  height: 2px;
+  background-color: #C6C6C6;
+  margin: 20px 0;
 }
 
 .small-image-container {
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack small images vertically */
-  margin-right: 10px; /* Space between small image container and large image */
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
   margin-top: 150px;
   margin-right: 50px;
-
 }
+
 .inner-border {
-  border: 0.78px solid #1F8394;
-  border-radius: 3.89px; /* Rounded corners for the inner border */
-  padding: 7.77px; /* Padding inside the inner border */
+  border: 0.78px solid #ebf0f0;
+  border-radius: 3.89px;
+  padding: 7.77px;
+  transition: border-color 0.3s;
+  width: 50px;
+  height: 62px;
+}
+
+.inner-border.selected {
+  border-color: #1F8394;
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.5);
 }
 
 .small-image {
-  width: 50.53px; /* Set the width */
-  height: 62.19px; /* Set the height */
-  gap: 7.77px; /* Space between items if needed */
-  border-radius: 3.89px; /* Rounded corners */
-  border: 1.55px solid #ddd; /* Border with specified width */
-  padding: 7.77px; /* Padding inside the small image container */
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  margin-bottom: 7.77px; /* Space between the two small images */
+  width: 70px;
+  height: 80px;
+  gap: 7.77px;
+  border-radius: 3.89px;
+  border: 1.55px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7.77px;
 }
 
 .small-image-img {
-  max-width:50px; /* Make the image responsive */
-  max-height: 60px; /* Ensure the image fits within the div */
-  object-fit: cover; /* Cover the area without distortion */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .product-image {
-  flex: 1; /* Take up more space */
-  margin-right: 20px; /* Space between image and details */
+  flex: 1;
+  margin-right: 20px;
 }
 
 .large-image {
-  width: 100%; /* Responsive width */
-  max-width: 400px; /* Max width for the main image */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   max-height: 700px;
 }
 
 .product-details {
-  flex: 2; /* Take up more space */
-  margin-right: 20px; /* Space between details and add-to-cart card */
+  flex: 2;
+  margin-right: 20px;
 }
-.product-head{
-font-family: 'Inika', serif;
-font-weight: 400;
-font-size: 16.04px;
-line-height: 19.87px;
-letter-spacing: 0%;
-color: #1F8394;
-
+.product-head {
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 16.04px;
+  line-height: 19.87px;
+  letter-spacing: 0%;
+  color: #1F8394;
 }
-.product-details p{
-  font-family: "IBM Plex Sans", sans-serif ;
-font-weight: 400;
-font-size: 25px;
-line-height: 30.97px;
-letter-spacing: 0%;
-
+.product-details p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30.97px;
+  letter-spacing: 0%;
 }
 .rating-container {
-  display: flex; /* Use flexbox for horizontal alignment */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  align-items: center;
 }
-.product-paragraph{
-font-family: 'IBM Plex Sans', sans-serif Condensed;
-font-weight: 400;
-font-size: 16.04px;
-line-height: 19.87px;
-letter-spacing: 0%;
-color: #1F8394;
-margin-left: 10px;
-
+.product-paragraph {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16.04px;
+  line-height: 19.87px;
+  letter-spacing: 0%;
+  color: #1F8394;
+  margin-left: 10px;
 }
-.currency-h2{
+.currency-h2 {
   width: 102.90361022949219px;
-height: 32.89502716064453px;
-margin-bottom: 0px;
+  height: 32.89502716064453px;
+  margin-bottom: 0px;
+  font-family: "IBM Plex Sans", sans-serif;
 
 }
-.price-paragraph{
-  font-family: "IBM Plex Sans", sans-serif condensed;
-font-weight: 300;
-font-size: 18.24px;
-line-height: 22.59px;
-letter-spacing: 0%;
-color:  #000000;
-margin-bottom: 0px;
+.price-paragraph {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-size: 18.24px;
+  line-height: 22.59px;
+  letter-spacing: 0%;
+  color: #000000;
+  margin-bottom: 0px;
 }
 
 .rating-text {
-  margin-right: 8px; /* Space between the rating text and the star rating */
+  margin-right: 8px;
   width: 23;
   height: 21;
-  font-family: "IBM Plex Sans", sans-serif condensed;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   font-size: 21.8px;
   line-height: 20.84px;
   letter-spacing: 0%;
   text-align: center;
   color: #000000;
-
 }
-.discount-container{
+.discount-container {
   display: flex;
   margin-top: 1px;
-
 }
-.discount-p1{
+.discount-p1 {
   font-family: "IBM Plex Sans", sans-serif;
-font-weight: 300;
-font-size: 13.99px;
-line-height: 17.33px;
-letter-spacing: 0%;
-color: #5C5C5C;
-
+  font-weight: 300;
+  font-size: 13.99px;
+  line-height: 17.33px;
+  letter-spacing: 0%;
+  color: #5C5C5C;
 }
-.discount-p2{
+.discount-p2 {
   font-family: "IBM Plex Sans", sans-serif;
-font-weight: 400;
-font-size: 17.23px;
-line-height: 21.34px;
-letter-spacing: 0%;
-color: #000000;
-
+  font-weight: 400;
+  font-size: 17.23px;
+  line-height: 21.34px;
+  letter-spacing: 0%;
+  color: #000000;
 }
-.discount-h2{
+.discount-h2 {
   font-family: "IBM Plex Sans", sans-serif;
-font-weight: 400;
-font-size: 17.25px;
-line-height: 21.37px;
-letter-spacing: 0%;
-color: #000000;
-
+  font-weight: 400;
+  font-size: 17.25px;
+  line-height: 21.37px;
+  letter-spacing: 0%;
+  color: #000000;
 }
-.pay-details{
+.pay-details {
   display: flex;
-
 }
-.pay-first{
-width: 130px;
-height: 100px;
-gap: 8.33px;
-display: flex; /* Use flexbox for layout */
-flex-direction: column; /* Stack items vertically */
-align-items: center; /* Center items horizontally */
-justify-content: center; /* Center items vertically */
-text-align: center; /* Center text */
+.pay-first {
+  width: 130px;
+  height: 100px;
+  gap: 8.33px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.pay-first h2{
+.pay-first h2 {
   font-family: "IBM Plex Sans", sans-serif;
-font-weight: 400;
-font-size: 15.66px;
-line-height: 19.4px;
-letter-spacing: 0%;
-text-align: center;
-color: #1F8394;
+  font-weight: 400;
+  font-size: 15.66px;
+  line-height: 19.4px;
+  letter-spacing:0%;
+  text-align: center;
+  color: #1F8394;
 }
-.pay-first img{
+.pay-first img {
   align-items: center;
   height: 40px;
-   width: 40;
+  width: 40;
 }
-.About-item h2{
+.About-item h2 {
   font-family: "IBM Plex Sans", sans-serif;
-font-weight: 700;
-font-size: 16.92px;
-line-height: 20.96px;
-letter-spacing: 0%;
-
+  font-weight: 700;
+  font-size: 16.92px;
+  line-height: 20.96px;
+  letter-spacing: 0%;
 }
-.About-item ul li{
+.About-item ul li {
   font-family: "IBM Plex Sans", sans-serif;
-font-weight: 300;
-font-size: 16.92px;
-line-height: 20.96px;
-letter-spacing: 0%;
-
+  font-weight: 300;
+  font-size: 16.92px;
+  line-height: 20.96px;
+  letter-spacing: 0%;
 }
 .add-to-cart-card {
-  border: 1px solid #ddd; /* Light border for the card */
-  background-color: #f9f9f9; /* Light background color */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: flex-start; /* Align items to the left */
-  width: 250px; /* Adjust width to a smaller value, e.g., 200px */
-  height: 650px; /* Keep height as needed */
-  padding: 13.44px 17.91px; /* Padding for the card */
-  border-radius: 4.48px; /* Rounded corners */
-  border-width: 0.9px; /* Border width */
-  border: 0.9px solid #000000; /* Border color */
+  flex-direction: column;
+  align-items: flex-start;
+  width: 250px;
+  height: 650px;
+  padding: 13.44px 17.91px;
+  border-radius: 4.48px;
+  border-width: 0.9px;
+  border: 0.9px solid #000000;
 }
 
 .add-to-cart-card h3 {
-  margin: 0; /* Remove margin for the heading */
+  margin: 0;
 }
 
 .details {
-  font-family: 'IBM Plex Sans', sans-serif; /* Corrected font-family declaration */
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   font-size: 15.56px;
   line-height: 19.28px;
   letter-spacing: 0%;
   color: #1F8394;
-  margin: 0; /* Remove default margin from the paragraph */
+  margin: 0;
 }
 
 .Location {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  margin: 0; /* Ensure no margin around the Location container */
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .location-icon {
-  width: 18px; /* Set width */
-  height: 21px; /* Set height */
-  margin-right: 8px; /* Space between the icon and text */
+  width: 18px;
+  height: 21px;
+  margin-right: 8px;
 }
 .quantity-selector {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack label and select vertically */
-  gap: 9.4px; /* Space between label and select */
-  margin-top: 10px; /* Space above the quantity selector */
+  display: flex;
+  flex-direction: column;
+  gap: 9.4px;
+  margin-top: 10px;
 }
 
 .quantity-dropdown {
-  width: 217.69px; /* Set width */
-  height: 34.16px; /* Set height */
-  padding: 6.58px 10.34px; /* Padding for the dropdown */
-  border-radius: 4.7px; /* Rounded corners */
-  border-width: 0.94px; /* Border width */
-  background: #F0F2F2; /* Background color */
-  border: 0.94px solid #C6C6C6; /* Border color */
-  font-family: 'IBM Plex Sans', sans-serif; /* Font family */
-  font-size: 15px; /* Font size */
+  width: 100%;
+  height: 34.16px;
+  padding: 6.58px 10.34px;
+  border-radius: 4.7px;
+  border-width: 0.94px;
+  background: #F0F2F2;
+  border: 0.94px solid #C6C6C6;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
 }
 .button-cart {
-  width: 217.69px; /* Set width */
-  height: 26.90px; /* Set height */
-  gap: 9.15px; /* This property is typically used in flex containers */
-  padding: 10px 57px 25px 57px; /* Adjust padding (top, right, bottom, left) */
-  border-radius: 18.29px; /* Rounded corners */
-  margin-bottom: 10px; /* Space below the element */
-  margin-top: 10px; /* Space above the element */
-  text-align: center; /* Center text */
-  font-family: 'IBM Plex Sans', sans-serif; /* Font family */
-  font-weight: 400; /* Font weight */
-  font-size: 16.78px; /* Font size */
-  line-height: 20.79px; /* Line height */
-  letter-spacing: 0%; /* Letter spacing */
-  border: none; /* Remove border */
-  background-color: #F0F2F2; /* Optional: Set a background color */
-  cursor: pointer; /* Change cursor to pointer on hover */
-
+  width: 100%;
+  height: 40px;
+  gap: 9.15px;
+  padding: 10px 57px 25px 57px;
+  border-radius: 18.29px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16.78px;
+  line-height: 20.79px;
+  letter-spacing: 0%;
+  border: none;
+  background-color: #F0F2F2;
+  cursor: pointer;
 }
 
 .add-to-cart-card button:hover {
-  background-color: #c7dffa; /* Darker blue on hover */
+  background-color: #c7dffa;
 }
-.ship-owner
-{
-font-family: 'IBM Plex Sans', sans-serif; /* Font family */
-font-weight: 400;
-font-size: 14.99px;
-line-height: 18.57px;
-letter-spacing: 0%;
-color: #717171;
-margin: 0px;
-margin-top: 5px;
-
+.ship-owner {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14.99px;
+  line-height: 18.57px;
+  letter-spacing: 0%;
+  color: #717171;
+  margin: 0px;
+  margin-top: 5px;
 }
-.Addtolist{
-width: 206.94017028808594px;
-height: 32.54182815551758px;
-gap: 8.96px;
-padding-top: 6.27px;
-padding-right: 9.85px;
-padding-bottom: 6.27px;
-padding-left: 9.85px;
-border-radius: 8.96px;
-border-width: 0.45px;
-align-items: center;
-justify-content: center;
-text-align: left;
-margin-top: 20px;
+.Addtolist {
+  width: 100%;
+  height: 32px;
+  gap: 8.96px;
+  padding-top: 6.27px;
+  padding-right: 9.85px;
+  padding-bottom: 6.27px;
+  padding-left: 9.85px;
+  border-radius: 8.96px;
+  border-width: 0.45px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-top: 20px;
 }
-.reviews-section{
+.reviews-section {
   display: flex;
   flex-direction: row;
 }
-.rate-container{
+.rate-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 395.162841796875px;
-height: 303.07666015625px;
-gap: 25.08px;
-
+  height: 303.07666015625px;
+  gap: 25.08px;
 }
-.rate-container h2{
-font-family: 'IBM Plex Sans', sans-serif; /* Font family */
-font-weight: 700;
-font-size: 20.99px;
-line-height: 26px;
-letter-spacing: 0%;
+.rate-container h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size:  20.99px;
+  line-height: 26px;
+  letter-spacing: 0%;
 }
-.rate{
+.rate {
   margin-top: 0px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
-.rate p{
+.ratingtext {
   font-family: "Hind Vadodara", sans-serif;
   font-weight: 400;
   font-size: 20.1px;
   line-height: 30.11px;
   letter-spacing: 0%;
   text-align: center;
-
+  margin-top:30px;
+  margin-left: 5px;
 }
 .rating-summary {
   margin-top: 0px;
   width: 400px;
   height: 400px;
 }
-.rating-summary h2{
+.rating-summary h2 {
   font-family: "Hind Vadodara", sans-serif;
-font-weight: 400;
-font-size: 20.1px;
-line-height: 30.11px;
-letter-spacing: 0%;
-color: #5C5C5C;
+  font-weight: 400;
+  font-size: 20.1px;
+  line-height: 30.11px;
+  letter-spacing: 0%;
+  color: #5C5C5C;
 }
 
 .star-rating {
@@ -358,56 +360,53 @@ color: #5C5C5C;
 }
 
 .progress-bar-container {
-  flex-grow: 1; /* Allow the progress bar to take available space */
-  border-radius: 5px; /* Rounded corners */
-  height: 20px; /* Height of the progress bar */
-  margin-left: 20px; /* Space between star label and progress bar */
+  flex-grow: 1;
+  border-radius: 5px;
+  height: 20px;
+  margin-left: 20px;
   margin-right: 20px;
-  position: relative; /* Positioning for the inner bar */
+  position: relative;
   border: 0.86px solid #000000;
   width: 236.0600128173828px;
   height: 25.949159622192383px;
   border-width: 0.86px;
-  }
-
-.progress-bar {
-  background-color: #FFD700; /* Color for the filled portion of the progress bar */
-  height: 100%; /* Fill the height of the container */
-  border-radius: 5px; /* Rounded corners */
-  transition: width 0.3s; /* Smooth transition for width change */
 }
 
+.progress-bar {
+  background-color: #FFD700;
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
 
 .comments-section {
-  margin-top: 15px; /* Space above the comments section */
-align-items: center;
-justify-content: center;
-margin-left: 200px;
-
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
 }
 
 .comment {
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px; /* Padding inside each comment */
-  margin-bottom: 10px; /* Space between comments */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .comment-date {
-  font-size: 12px; /* Smaller font for the date */
-  color: #777; /* Gray color for the date */
+  font-size: 12px;
+  color: #777;
 }
 
-.comment-name{
+.comment-name {
   font-family: "Hind Vadodara", sans-serif;
-font-weight: 400;
-font-size: 17.97px;
-line-height: 26.92px;
-letter-spacing: 0%;
-color: #000000;
-margin-left: 10px;
-
+  font-weight: 400;
+  font-size: 17.97px;
+  line-height: 26.92px;
+  letter-spacing: 0%;
+  color: #000000;
+  margin-left: 10px;
 }
-.rate-comment h3{
+.rate-comment h3 {
   font-family: "Hind Vadodara", sans-serif;
   font-weight: 700;
   font-size: 22.14px;
@@ -416,32 +415,124 @@ margin-left: 10px;
   text-align: center;
   margin-left: 5px;
 }
-.comment-date{
+.comment-date {
   font-family: "Inter", sans-serif;
-font-weight: 300;
-font-size: 16.52px;
-line-height: 20px;
-letter-spacing: 0%;
-
+  font-weight: 300;
+  font-size: 16.52px;
+  line-height: 20px;
+  letter-spacing: 0%;
 }
-.verfied
-{
-font-family: "Inter", sans-serif;
-font-weight: 600;
-font-size: 16.52px;
-line-height: 20px;
-letter-spacing: 0%;
-color: #DE7921;
-
+.verified {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16.52px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #DE7921;
 }
-.comment-content{
+.comment-content {
   width: 831.830810546875px;
   height: 20px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-font-size: 16.52px;
-line-height: 20px;
-letter-spacing: 0%;
-color: #000000;
+  font-size: 16.52px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .product-section {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .small-image-container {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .product-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .large-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product-details {
+    flex: 1;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .add-to-cart-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .quantity-dropdown {
+    width: 100%;
+  }
+
+  .button-cart {
+    width: 100%;
+  }
+
+  .reviews-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rate-container {
+    width: 100%;
+  }
+
+  .comments-section {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 120px;
+  }
+
+  .comment {
+    width: 100%;
+  }
+
+  .rate {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .product-head {
+    font-size: 14px;
+  }
+
+  .product-details p {
+    font-size: 18px;
+  }
+
+  .rating-text {
+    font-size: 18px;
+  }
+
+  .discount-p1, .discount-p2, .discount-h2 {
+    font-size: 14px;
+  }
+
+  .add-to-cart-card {
+    padding: 10px;
+  }
+
+  .ship-owner {
+    font-size: 12px;
+  }
+
+  .Addtolist {
+    width: 100%;
+  }
 }
