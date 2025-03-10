@@ -1,6 +1,13 @@
+.productcontainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .product-section {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   margin: 20px;
 }
 hr {
@@ -17,19 +24,27 @@ hr {
   margin-top: 150px;
   margin-right: 50px;
 }
+
 .inner-border {
-  border: 0.78px solid #1F8394;
+  border: 0.78px solid #ebf0f0;
   border-radius: 3.89px;
   padding: 7.77px;
+  transition: border-color 0.3s;
+  width: 50px;
+  height: 62px;
+}
+
+.inner-border.selected {
+  border-color: #1F8394;
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.5);
 }
 
 .small-image {
-  width: 50.53px;
-  height: 62.19px;
+  width: 70px;
+  height: 80px;
   gap: 7.77px;
   border-radius: 3.89px;
   border: 1.55px solid #ddd;
-  padding: 7.77px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,8 +52,8 @@ hr {
 }
 
 .small-image-img {
-  max-width: 50px;
-  max-height: 60px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
 }
 
@@ -90,6 +105,8 @@ hr {
   width: 102.90361022949219px;
   height: 32.89502716064453px;
   margin-bottom: 0px;
+  font-family: "IBM Plex Sans", sans-serif;
+
 }
 .price-paragraph {
   font-family: "IBM Plex Sans", sans-serif;
@@ -230,7 +247,7 @@ hr {
 }
 
 .quantity-dropdown {
-  width: 217.69px;
+  width: 100%;
   height: 34.16px;
   padding: 6.58px 10.34px;
   border-radius: 4.7px;
@@ -241,8 +258,8 @@ hr {
   font-size: 15px;
 }
 .button-cart {
-  width: 217.69px;
-  height: 26.90px;
+  width: 100%;
+  height: 40px;
   gap: 9.15px;
   padding: 10px 57px 25px 57px;
   border-radius: 18.29px;
@@ -273,8 +290,8 @@ hr {
   margin-top: 5px;
 }
 .Addtolist {
-  width: 206.94017028808594px;
-  height: 32.54182815551758px;
+  width: 100%;
+  height: 32px;
   gap: 8.96px;
   padding-top: 6.27px;
   padding-right: 9.85px;
@@ -310,14 +327,17 @@ hr {
   margin-top: 0px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
-.rate p {
+.ratingtext {
   font-family: "Hind Vadodara", sans-serif;
   font-weight: 400;
   font-size: 20.1px;
   line-height: 30.11px;
   letter-spacing: 0%;
   text-align: center;
+  margin-top:30px;
+  margin-left: 5px;
 }
 .rating-summary {
   margin-top: 0px;
@@ -419,4 +439,100 @@ hr {
   line-height: 20px;
   letter-spacing: 0%;
   color: #000000;
+}
+@media (max-width: 768px) {
+  .product-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .small-image-container {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .product-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .large-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product-details {
+    flex: 1;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .add-to-cart-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .quantity-dropdown {
+    width: 100%;
+  }
+
+  .button-cart {
+    width: 100%;
+  }
+
+  .reviews-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rate-container {
+    width: 100%;
+  }
+
+  .comments-section {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 120px;
+  }
+
+  .comment {
+    width: 100%;
+  }
+
+  .rate {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .product-head {
+    font-size: 14px;
+  }
+
+  .product-details p {
+    font-size: 18px;
+  }
+
+  .rating-text {
+    font-size: 18px;
+  }
+
+  .discount-p1, .discount-p2, .discount-h2 {
+    font-size: 14px;
+  }
+
+  .add-to-cart-card {
+    padding: 10px;
+  }
+
+  .ship-owner {
+    font-size: 12px;
+  }
+
+  .Addtolist {
+    width: 100%;
+  }
 }

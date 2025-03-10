@@ -16,6 +16,8 @@ products:any[]=[];
 product: Product | undefined;
 ratingPercentages: number[] = [];
   errorMessage: string | undefined;
+  selectedImage: string = '';
+  selectedThumbnail: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +38,9 @@ ratingPercentages: number[] = [];
         if (this.product && this.product.reviews) {
           this.ratingPercentages = this.calculateRatingPercentages(this.product.reviews);
         }
+        this.selectedImage = this.product.images.length > 0 ? this.product.images[0] : this.product.thumbnail;
+        this.selectedThumbnail = this.product.images[0];
+
       },
       (error: HttpErrorResponse) => {
         this.errorMessage = `Error fetching product: ${error.message}`;
@@ -45,15 +50,20 @@ ratingPercentages: number[] = [];
   }
   calculateRatingPercentages(reviews: { rating: number }[]) {
     const totalReviews = reviews.length;
-    const ratingCounts = [0, 0, 0, 0, 0]; // Index 0 for 1 star, 1 for 2 stars, etc.
+    const ratingCounts = [0, 0, 0, 0, 0];
 
     reviews.forEach(review => {
       if (review.rating >= 1 && review.rating <= 5) {
-        ratingCounts[review.rating - 1]++; // Increment the count for the corresponding star rating
+        ratingCounts[review.rating - 1]++;
       }
     });
 
-    // Calculate percentages
     return ratingCounts.map(count => (totalReviews > 0 ? (count / totalReviews) * 100 : 0));
+  }
+
+  changeImage(image: string) {
+    this.selectedImage = image;
+    this.selectedThumbnail = image;
+
   }
 }
