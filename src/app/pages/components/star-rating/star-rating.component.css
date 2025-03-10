@@ -1,16 +1,16 @@
 .star-rating {
   font-size: 2em;
-  color: #ffc107; /* Gold color for filled stars */
+  color: #ffc107; 
 }
 
 .filled-star {
-  color: #ffc107; /* Gold color */
+  color: #ffc107;
 }
 
 .half-star {
-  color: #ffc107; /* Gold color for half star */
+  color: #ffc107;
 }
 
 .empty-star {
-  color: #e0e0e0; /* Grey color for empty stars */
+  color: #e0e0e0;
 }

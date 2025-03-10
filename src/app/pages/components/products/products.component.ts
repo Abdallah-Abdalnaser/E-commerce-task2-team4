@@ -7,22 +7,21 @@ import { Router } from '@angular/router';
   selector: 'app-products',
   standalone: false,
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'] // Corrected from styleUrl to styleUrls
+  styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit , OnChanges{
-  @Input() products: Product[] = []; // Input property for products
+  @Input() products: Product[] = [];
   filteredProducts: Product[] = [];
   rating=4;
-  categories = ['beauty', 'fragrances', 'furniture','groceries']; // Add your categories here
-  selectedCategory = this.categories[0]; // Default selected category
-  prices = ['All', 'under-20', '20-50','50-above']; // Add your categories here
-  selectedPriceRange = this.prices[0];// Default selected price range
+  categories = ['beauty', 'fragrances', 'furniture','groceries'];
+  selectedCategory = this.categories[0];
+  prices = ['All', 'under-20', '20-50','50-above'];
+  selectedPriceRange = this.prices[0];
 
   constructor(private productService: ProductServiceService,private router: Router) {
-    this.filteredProducts = this.products; // Initialize with all products
+    this.filteredProducts = this.products; 
   }
   ngOnChanges(changes: SimpleChanges): void {
- // Check if products or selected filters have changed
   this.filterProducts();
   }
 
