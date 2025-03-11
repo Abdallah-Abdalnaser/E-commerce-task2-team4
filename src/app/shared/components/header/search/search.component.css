@@ -1,0 +1,52 @@
+#search {
+  display: flex;
+  align-items: center;
+}
+
+#search .categories  {
+  position: relative;
+}
+
+#search .categories::before  {
+  content: "";
+  position: absolute;
+  right: 0.4rem;
+  top: 52%;
+  transform: translateY(-50%);
+  border: 0.29rem;
+  border-style: solid;
+  border-color: var(--Gray) transparent transparent transparent;
+}
+
+#search .categories select {
+  appearance: none;
+  background-color: var(--Gray2);
+  padding: 0.7rem 0.6rem;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border: 0px;
+  outline: 0px;
+  color: var(--Gray);
+  font-size: 0.8rem;
+  cursor:pointer;
+}
+
+#search input[type='search'] {
+  width: 100%;
+  padding: 0.55rem;
+  border: 0px;
+  outline: 0px;
+}
+
+#search button {
+  background-color: var(--Gold);
+  padding: 0.55rem 1.3rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  border: 0px;
+  outline: 0px;
+}
+
+#search button fa-iocn {
+  color: var(--balck);
+}

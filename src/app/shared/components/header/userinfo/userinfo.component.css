@@ -1,0 +1,178 @@
+.col {
+  width: fit-content;
+}
+
+#lanuguage {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+#lanuguage::before {
+  content: "";
+  position: absolute;
+  right: 0rem;
+  bottom: 3px;
+  border-width: 0.28rem;
+  border-style: solid;
+  border-color: var(--Gray2) transparent transparent transparent;
+}
+
+#lanuguage:hover > form {
+  display: block;
+  z-index: 2;
+}
+
+#lanuguage .info {
+  display: flex;
+  align-items: center;
+}
+
+#lanuguage .info img {
+  width: 1.3rem;
+  margin-right: 0.2rem;
+}
+
+#lanuguage .info span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#lanuguage form {
+  display: none;
+  position: absolute;
+  top:calc(100% + 1rem);
+  background-color: var(--white);
+  color: var(--Gray);
+  width: 10rem;
+  border-radius: 0.2rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+#lanuguage form::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 0.3rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+#login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  line-height: 1;
+  min-width: 8rem;
+}
+
+#login:hover > .signin {
+  display: block;
+  z-index: 2;
+}
+
+#login span:first-of-type {
+  font-weight: 200;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#login span:last-of-type {
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#login .signin {
+  display: none;
+  position: absolute;
+  top: 130%;
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: 0px 0px 2px #ccc;
+  border-radius: 0.2rem;
+}
+
+#login .signin::before {
+  content: "";
+  position: absolute;
+  top: -0.9rem;
+  left: 0.3rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+#login .signin button {
+  background-color: var(--yellow);
+  padding: 0.5rem 4rem;
+  color: var(--black);
+  border: 0px;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  width: 12rem;
+}
+
+#ReturnsOrders a {
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+}
+
+#Cart {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+#Cart img {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+#Cart .counter {
+  position: absolute;
+  top: -7px;
+  left: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+#Cart .name {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+/* responsive */
+
+@media (max-width:900px) {
+  #login {
+    min-width: 6rem;
+  }
+  #ReturnsOrders {
+    display: none;
+  }
+  #Cart .counter {
+    left: 14px;
+  }
+}
+
+
+@media (max-width:962px) {
+  #Cart .counter {
+    left: 11px;
+    top: -8px;
+  }
+  #Cart img {
+    width:1.8rem ;
+    height:1.8rem ;
+  }
+  #login {
+    min-width: 5rem;
+  }
+}
