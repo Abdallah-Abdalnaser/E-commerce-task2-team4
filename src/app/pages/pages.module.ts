@@ -9,7 +9,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { CategoryFilterPipe } from './pipes/category-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicStarComponent } from './components/basic-star/basic-star.component';
 import {register as registerSwiperElements} from 'swiper/element/bundle';
 import { SliderComponent } from './components/home/slider/slider.component'
@@ -27,13 +27,13 @@ registerSwiperElements();
     RegisterComponent,
     StarRatingComponent,
     CategoryFilterPipe,
-    BasicStarComponent,
+    BasicStarComponent,SliderComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
-    SliderComponent
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeComponent,

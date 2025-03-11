@@ -6,8 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms'; // Add this
 
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule], // Now valid
+  standalone: false,
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
