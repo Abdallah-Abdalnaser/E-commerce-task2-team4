@@ -1,16 +1,19 @@
+<div class="productcontainer">
 <div class="product-section" *ngIf="product">
   <div class="small-image-container">
-    <div class="small-image">
-        <div class="inner-border">
-          <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img" *ngIf="product.images && product.images.length > 0">
-        </div>
+    <div class="small-image"  (click)="changeImage(product.images[0])">
+      <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.images[0]}">
+        <img [src]="product.images[0]" alt="{{ product.title }}" class="small-image-img">
+      </div>
     </div>
-    <div class="small-image">
-      <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img" *ngIf="product.images && product.images.length > 0">
+    <div class="small-image" (click)="changeImage(product.thumbnail)">
+      <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.thumbnail}">
+        <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img" *ngIf="product.images && product.images.length > 0">
+      </div>
     </div>
   </div>
   <div class="product-image">
-    <img [src]="product.images[0]" alt="{{ product.title }}" class="large-image" *ngIf="product.images && product.images.length > 0">
+    <img [src]="selectedImage" alt="{{ product.title }}" class="large-image" *ngIf="product.images && product.images.length > 0">
   </div>
   <div class="product-details">
     <h1 class="product-head">Brand:{{ product.title }}</h1>
@@ -85,12 +88,10 @@
 <div class="reviews-section" *ngIf="product">
   <div class="rate-container">
     <h2>Customer Reviews</h2>
-    <!-- Move the star rating and rating text here -->
      <div class="rate">
       <app-star-rating [rating]="product.rating" style="margin-top: 10px;"></app-star-rating>
-      <p class="rating-text">{{ product.rating }} out of 5</p>
-    </div>
-    <!-- Rating Summary Section -->
+      <p class="ratingtext">{{ product.rating }} out of 5</p>
+     </div>
     <div class="rating-summary">
       <h2>Global Rating</h2>
       <div *ngFor="let percentage of ratingPercentages; let i = index">
@@ -120,4 +121,5 @@
       <p class="comment-name" style="margin: 0px;">Report</p>
     </div>
   </div>
+</div>
 </div>

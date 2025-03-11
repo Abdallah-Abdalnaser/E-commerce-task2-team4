@@ -1,113 +1,89 @@
-/* products.component.css */
-.product-container{
+.product-container {
   display: flex;
-  flex-direction: row;
 }
-.select-product{
+.select-product {
   display: flex;
   flex-direction: column;
-  width: 225px;
-height: 526px;
-top: 151px;
-left: 30px;
-
+  gap: 0.5rem;
+  height: fit-content;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  margin-top: 1.3rem;
 }
 .select-product h1{
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 14.23px;
-  line-height: 17.22px;
-  letter-spacing: 0%;
-color: #000000;
-width: 119.1355972290039px;
-height: 17px;
-margin-top: 20px;
-
+  font-size: 1rem;
+  color: var(--black);
 }
-.radio{
+
+
+.radio {
   display: flex;
   flex-direction: row;
   justify-items: flex-start;
 }
-.radio p{
-font-family: "Inter", sans-serif;
-font-weight: 400;
-font-size: 12.45px;
-line-height: 15.06px;
-letter-spacing: 0%;
-text-align: center;
-margin-top: 20px;
-margin-left: 5px;
-
+.radio p {
+  font-size: 0.9rem;
+  padding: 0px 0.5rem;
+  font-weight: 600;
+  margin: 0px;
 }
 .radio-container {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Space between radio buttons */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
-
 .radio-container input[type="radio"] {
-  display: none; /* Hide the default radio button */
+  display: none;
 }
-
 .radio-checkmark {
-  width: 15px; /* Width of the custom radio button */
-  height: 15px; /* Height of the custom radio button */
-  border: 2px solid #060707; /* Border color */
-  border-radius: 50%; /* Make it circular */
-  position: relative; /* Position for the checkmark */
-  margin-right: 10px; /* Space between the checkmark and label */
-  transition: background-color 0.3s; /* Smooth transition for background */
+  width: 15px;
+  height: 15px;
+  border: 2px solid #060707;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+  transition: background-color 0.3s;
 }
-
 .radio-container input[type="radio"]:checked + .radio-checkmark {
-  background-color: #060707; /* Background color when checked */
+  background-color: #060707;
 }
-
 .radio-container input[type="radio"]:checked + .radio-checkmark::after {
-  content: ""; /* Create a pseudo-element for the inner circle */
-  width: 5px; /* Width of the inner circle */
-  height: 5px; /* Height of the inner circle */
-  background-color: white; /* Inner circle color */
-  border-radius: 50%; /* Make it circular */
-  position: absolute; /* Position it inside the checkmark */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center the inner circle */
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.price-filter{
+.price-filter {
   display: flex;
   flex-direction: column;
 }
-.rate-first{
+.rate-first {
   margin-top: 0px;
   display: flex;
   flex-direction: row;
-}
-.rate-first p{
-font-family: "Inter", sans-serif;
-font-weight: 400;
-font-size: 12.45px;
-line-height: 15.06px;
-letter-spacing: 0%;
-text-align: center;
-margin-top: 30px;
-margin-left: 10px;
+  align-items: center;
 }
 
-
+.rate-first p {
+  margin: 0px;
+}
 .product-section {
   padding: 20px;
   width: 2000px;
-height: auto;
-gap: 19px;
-
+  height: auto;
+  gap: 19px;
 }
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr)); /* Responsive grid */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
+    gap: 15px;
 }
 .quantity-select {
   margin-left: 10px;
@@ -118,90 +94,78 @@ gap: 19px;
   margin-right: 5px;
   padding-left: 0px;
   padding-right: 0px;
-
 }
 .cards {
-  width: 276.6494140625px;
-  height: 600px;
+  width: fit-content;
   gap: 10.78px;
-  border-width: 1.08px;
-  padding: 10.78px;
-  border: 1.08px solid #D9D9D9;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
-  flex: 1 1 calc(33.33% - 20px); /* 3 cards per row with space */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+.cards figure {
+  max-height: 20rem;
+}
+.cards figure img ,.cards figure {
+  width: 100%;
+  height: 100%;
 }
 .cards h2{
-font-family: "Inter", sans-serif;
-font-weight: 500;
-font-size: 16.18px;
-line-height: 19.58px;
-letter-spacing: 0%;
-width: 255.0794219970703px;
-height: 80px;
-margin-bottom: 20px;
-
+  font-size: 1rem;
 }
-.rate{
+.rate {
   display: flex;
   flex-direction: row;
   width: 5px;
   height: 5px;
   margin-bottom: 20px;
 }
-
-.rate p{
+.rate p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16.65px;
   line-height: 20.63px;
   letter-spacing: 0%;
   color: #1F8394;
-
 }
-.policy{
-font-family: "Inter", sans-serif;
-font-weight: 400;
-font-size: 12.94px;
-line-height: 16.03px;
-letter-spacing: 0%;
-color: #717171;
-width: 172.03231811523438px;
-height: 16px;
-
-
+.policy {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12.94px;
+  line-height: 16.03px;
+  letter-spacing: 0%;
+  color: #717171;
+  width: 172.03231811523438px;
+  height: 16px;
 }
-.price{
-font-family: "Inter", sans-serif;
-font-weight: 400;
-font-size: 21.57px;
-line-height: 26.1px;
-letter-spacing: 0%;
-margin: 0px;
-
+.price {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 21.57px;
+  line-height: 26.1px;
+  letter-spacing: 0%;
+  margin: 0px;
 }
-.price span{
-font-family: "Inter", sans-serif;
-font-weight: 400;
-font-size: 13.42px;
-line-height: 16.25px;
-letter-spacing: 0%;
-color: #717171;
+.price span {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 13.42px;
+  line-height: 16.25px;
+  letter-spacing: 0%;
+  color: #717171;
 }
-.save{
-font-family: "Inter", sans-serif;
-font-weight: 300;
-font-size: 12.94px;
-line-height: 15.66px;
-letter-spacing: 0%;
-text-align: left;
-color: #7F7F7F;
-margin: 0px;
+.save {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12.94px;
+  line-height: 15.66px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #7F7F7F;
+  margin: 0px;
 }
-.delivery{
+.delivery {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 12.94px;
@@ -210,27 +174,20 @@ margin: 0px;
   color: #000000;
   width: 238.86672973632812px;
   height: 32px;
-
 }
-.delivery span{
-font-family: "Inter", sans-serif;
-font-weight: 600;
-font-size: 12.94px;
-line-height: 15.66px;
-letter-spacing: 0%;
-color: #000000;
-
+.delivery span {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 12.94px;
+  line-height: 15.66px;
+  letter-spacing: 0%;
+  color: #000000;
 }
 .Add{
-width: 120px;
-height: 27px;
-gap: 9.91px;
-padding-top: 6.93px;
-padding-right: 17.83px;
-padding-bottom: 6.93px;
-padding-left: 17.83px;
-border-radius: 19.81px;
-background-color: #FFCC00;
-border: none;
-margin: 0px;
+  width: fit-content;
+padding: 0.5rem 1rem;
+  border-radius: 19.81px;
+  background-color: #FFCC00;
+  border: none;
+  margin: 0px;
 }

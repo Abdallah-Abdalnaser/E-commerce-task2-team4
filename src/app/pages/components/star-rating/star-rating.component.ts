@@ -11,7 +11,6 @@ export class StarRatingComponent {
 
   @Input()
   set rating(value: number) {
-    // Ensure the rating is clamped between 0 and 5
     this._rating = Math.max(0, Math.min(5, value || 0));
   }
 
@@ -20,12 +19,10 @@ export class StarRatingComponent {
   }
 
   get stars() {
-    // Calculate filled stars
     return Array(Math.floor(this.rating)).fill(0);
   }
 
   get emptyStars() {
-    // Calculate the number of empty stars
     return Array(5 - Math.ceil(this.rating)).fill(0);
   }
 }
