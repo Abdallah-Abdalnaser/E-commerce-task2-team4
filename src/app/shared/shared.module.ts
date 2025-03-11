@@ -10,7 +10,7 @@ import { FooterInfoComponent } from './components/footer/footer-info/footer-info
 import { SearchComponent } from './components/header/search/search.component';
 import { UserinfoComponent } from './components/header/userinfo/userinfo.component';
 import { LogoLocationComponent } from './components/header/logo-location/logo-location.component';
-
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { LogoLocationComponent } from './components/header/logo-location/logo-lo
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   exports: [
     HeaderComponent,

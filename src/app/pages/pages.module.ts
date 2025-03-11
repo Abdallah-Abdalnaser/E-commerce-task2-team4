@@ -17,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 registerSwiperElements();
 
-
 @NgModule({
   declarations: [
     HomeComponent,
