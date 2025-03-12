@@ -21,10 +21,16 @@
     <div class="rating-container">
       <p class="rating-text">{{ product.rating }}</p>
       <app-star-rating [rating]="product.rating ? product.rating : 0"></app-star-rating>
-      <p class="product-paragraph" >{{ product.reviews.length }} ratings <span style="color: black;">|</span> Search this Page</p>
+      <p class="product-paragraph" >{{ product.reviews.length }} ratings
+         <span style="color: black;">|</span> Search this Page
+      </p>
     </div>
     <hr>
-    <h2 class="currency-h2" > {{ product.price | currency:'SAR' }}</h2>
+    <div class="price-container">
+      <span class="currency">SAR</span>
+      <span class="price">{{ product.price| number: '1.2-2' }}</span>
+      <span class="currency-r">14</span>
+    </div>
     <p class="price-paragraph">All price include VAT.</p>
     <div class="discount-container">
       <p class="discount-p1">Sign in to redeem.</p>
@@ -58,7 +64,11 @@
   </div>
 
   <div class="add-to-cart-card">
-    <h2> {{ product.price | currency:'SAR' }}</h2>
+    <div class="price-container">
+      <span class="currency">SAR</span>
+      <span class="price">{{ product.price| number: '1.2-2' }}</span>
+      <span class="currency-r">14</span>
+    </div>
     <p>{{product.shippingInformation}}</p>
     <p class="details">Details</p>
     <div class="Location">
@@ -79,7 +89,7 @@
     <button  class="button-cart" style="background-color: #FFD814;">Add To Cart</button>
     <button class="button-cart" style="background-color: #FFA41C;">Buy Now</button>
     <p class="ship-owner">Ships From <span style="margin-left: 20px;">{{product.brand}}</span></p>
-    <p class="ship-owner">Sold by <span style="margin-left: 48px; color: #1F8394; text-align: center;">{{product.brand}}</span></p>
+    <p class="ship-owner">Sold by <span style="margin-left: 48px; color: #1F8394;">{{product.brand}}</span></p>
     <p class="ship-owner">Payment <span style="margin-left: 38px; color: #1F8394;">Secure Transaction</span></p>
     <button class="Addtolist">Add to list</button>
   </div>
@@ -87,7 +97,7 @@
 <hr>
 <div class="reviews-section" *ngIf="product">
   <div class="rate-container">
-    <h2>Customer Reviews</h2>
+    <h2 >Customer Reviews</h2>
      <div class="rate">
       <app-star-rating [rating]="product.rating" style="margin-top: 10px;"></app-star-rating>
       <p class="ratingtext">{{ product.rating }} out of 5</p>
@@ -106,19 +116,21 @@
     </div>
   </div>
   <div class="comments-section">
-    <h3>Comments</h3>
     <div *ngFor="let review of product.reviews" class="comment">
       <div style="display: flex ; flex-direction: row;">
-        <img src="../../../../assets/image.png" style="width: 44px;height: 44px; margin-top: 10px;"><h2 class="comment-name">{{review.reviewerName}}</h2>
+        <img src="../../../../assets/image.png" style="width: 44px;height: 44px; margin-top: 10px;">
+        <h2 class="comment-name">{{review.reviewerName}}</h2>
       </div>
       <div class="rate-comment" style="display: flex; flex-direction: row;">
         <app-star-rating [rating]="review.rating" style="margin-top: 10px;"></app-star-rating>
         <h3>Lindooo</h3>
       </div>
-      <p class="comment-date">{{review.date}}</p>
+      <p class="comment-date">Reviewed in the United State on {{review.date}}</p>
       <h4 class="verfied">Verified Purchase</h4>
       <p class="comment-content">{{ review.comment }}</p>
-      <p class="comment-name" style="margin: 0px;">Report</p>
+      <p class="report" style="margin: 0px; ">
+        <a href="" style="color: black;">Report</a>
+      </p>
     </div>
   </div>
 </div>

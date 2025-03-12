@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit , OnChanges{
-  @Input() products: Product[] = [];
+  products: Product[] = [];
   filteredProducts: Product[] = [];
   rating=4;
   categories = ['beauty', 'fragrances', 'furniture','groceries'];
@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit , OnChanges{
   selectedPriceRange = this.prices[0];
 
   constructor(private productService: ProductServiceService,private router: Router) {
-    this.filteredProducts = this.products; 
+    this.filteredProducts = this.products;
   }
   ngOnChanges(changes: SimpleChanges): void {
   this.filterProducts();
