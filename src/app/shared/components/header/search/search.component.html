@@ -6,8 +6,8 @@
       </optgroup>
     </select>
   </div>
-  <input type="search" name="productname" id="productname" placeholder="Search Amazon">
-  <button>
+  <input type="search" name="productname" id="productname" placeholder="Search Amazon" #productSearch>
+  <button (click)="search(productSearch)">
     <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
   </button>
 </div>

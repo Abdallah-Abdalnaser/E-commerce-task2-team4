@@ -51,24 +51,6 @@
 
   </div>
   <div class="product-section" *ngIf="filteredProducts.length > 0">
-    <div class="cards-container">
-      <div class="cards" *ngFor="let product of filteredProducts" (click)="navigateToProduct(product.id)">
-        <figure>
-          <img [src]="product.images[0]" alt="{{ product.title }}">
-        </figure>
-        <h2>{{ product.description }}</h2>
-        <div class="rate">
-          <app-basic-star [rating]="product.rating" style="margin-top:10px;"></app-basic-star>
-          <select class="quantity-select"></select>
-          <p class="rating-text">{{ product.minimumOrderQuantity }}</p>
-        </div>
-        <p class="policy">{{ product.returnPolicy }}</p>
-        <p class="price">₹{{ product.price }} <span>({{ product.discountPercentage }}% off)</span></p>
-        <p class="save">Save extra with No Cost EMI</p>
-        <p class="delivery">Free delivery : {{ product.shippingInformation }} <span>7:00am - 9:00pm</span></p>
-        <button class="Add">Add to cart</button>
-      </div>
-    </div>
+    <app-resultsearch></app-resultsearch>
   </div>
-  <div *ngIf="filteredProducts.length === 0">No products available.</div>
 </div>

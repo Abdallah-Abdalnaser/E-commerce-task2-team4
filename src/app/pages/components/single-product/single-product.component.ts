@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../core/interfaces/Product';
+import { Product } from '../../../core/interfaces/singleProduct.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServiceService } from '../../../core/services/product-service.service';
 import { HttpErrorResponse } from '@angular/common/http';

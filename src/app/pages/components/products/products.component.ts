@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Product } from '../../../core/interfaces/Product';
+import { Product } from '../../../core/interfaces/singleProduct.model';
 import { ProductServiceService } from '../../../core/services/product-service.service';
 import { Router } from '@angular/router';
 
@@ -19,8 +19,9 @@ export class ProductsComponent implements OnInit , OnChanges{
   selectedPriceRange = this.prices[0];
 
   constructor(private productService: ProductServiceService,private router: Router) {
-    this.filteredProducts = this.products; 
+    this.filteredProducts = this.products;
   }
+
   ngOnChanges(changes: SimpleChanges): void {
   this.filterProducts();
   }
@@ -54,7 +55,7 @@ export class ProductsComponent implements OnInit , OnChanges{
         x = x.filter(product => product.price >= 20 && product.price < 50);
         break;
       case '50-above':
-       x = x.filter(product => product.price >= 50);
+        x = x.filter(product => product.price >= 50);
         break;
       default:
         x = x;
