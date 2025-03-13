@@ -34,13 +34,11 @@ ratingPercentages: number[] = [];
     this.productService.getProductById(id).subscribe(
       (data) => {
         this.product = data;
-
         if (this.product && this.product.reviews) {
           this.ratingPercentages = this.calculateRatingPercentages(this.product.reviews);
         }
         this.selectedImage = this.product.images.length > 0 ? this.product.images[0] : this.product.thumbnail;
         this.selectedThumbnail = this.product.images[0];
-
       },
       (error: HttpErrorResponse) => {
         this.errorMessage = `Error fetching product: ${error.message}`;
