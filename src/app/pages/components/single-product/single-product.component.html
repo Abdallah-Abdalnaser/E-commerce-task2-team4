@@ -1,14 +1,16 @@
 <div class="productcontainer">
-<div class="product-section" *ngIf="product">
-  <div class="small-image-container">
-    <div class="small-image"  (click)="changeImage(product.images[0])">
-      <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.images[0]}">
-        <img [src]="product.images[0]" alt="{{ product.title }}" class="small-image-img">
+  <div class="product-section" *ngIf="product">
+    <div class="small-image-container">
+      <div class="small-image" (click)="changeImage(product.images[0])">
+        <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.images[0]}">
+          <img [src]="product.images[0]" alt="{{ product.title }}" class="small-image-img">
+        </div>
       </div>
-    </div>
-    <div class="small-image" (click)="changeImage(product.thumbnail)">
-      <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.thumbnail}">
-        <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img" *ngIf="product.images && product.images.length > 0">
+      <div class="small-image" (click)="changeImage(product.thumbnail)">
+        <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.thumbnail}">
+          <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img"
+            *ngIf="product.images && product.images.length > 0">
+        </div>
       </div>
     </div>
   </div>
@@ -36,32 +38,48 @@
       <p class="discount-p1">Sign in to redeem.</p>
       <p class="discount-p2"><span style="background-color: #71ED58;">Extra 20%</span>off  with meem credit cards.</p>
     </div>
-    <h2 class="discount-h2">Enter code MEEM20 at checkout. Discount by Amazon.</h2>
-    <div class="pay-details">
-      <div class="pay-first">
-        <img src="../../../../assets/image 620.png"  >
-        <h2>Electronic <br>payment Only</h2>
+    <div class="product-details">
+      <h1 class="product-head">Brand:{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+      <div class="rating-container">
+        <p class="rating-text">{{ product.rating }}</p>
+        <app-star-rating [rating]="product.rating ? product.rating : 0"></app-star-rating>
+        <p class="product-paragraph">{{ product.reviews.length }} ratings <span style="color: black;">|</span> Search
+          this Page</p>
       </div>
-      <div class="pay-first">
-        <img src="../../../../assets/image 621.png" >
-        <h2>30 days <br>Returnable</h2>
+      <hr>
+      <h2 class="currency-h2"> {{ product.price | currency:'SAR' }}</h2>
+      <p class="price-paragraph">All price include VAT.</p>
+      <div class="discount-container">
+        <p class="discount-p1">Sign in to redeem.</p>
+        <p class="discount-p2"><span style="background-color: #71ED58;">Extra 20%</span>off with meem credit cards.</p>
       </div>
-      <div class="pay-first">
-        <img  src="../../../../assets/image 622.png"  >
-        <h2>Secure <br>transaction</h2>
+      <h2 class="discount-h2">Enter code MEEM20 at checkout. Discount by Amazon.</h2>
+      <div class="pay-details">
+        <div class="pay-first">
+          <img src="../../../../assets/image 620.png">
+          <h2>Electronic <br>payment Only</h2>
+        </div>
+        <div class="pay-first">
+          <img src="../../../../assets/image 621.png">
+          <h2>30 days <br>Returnable</h2>
+        </div>
+        <div class="pay-first">
+          <img src="../../../../assets/image 622.png">
+          <h2>Secure <br>transaction</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="About-item">
+        <h2>About this item</h2>
+        <ul>
+          <li>Feature: square neck, cutout, puff sleeve, ruffle hem, tie back aline dress</li>
+          <li>Fabric has some stretch,and it's soft and comfortable</li>
+          <li>Suitable for daily wear, holidays, dating, vacation, weekend casual</li>
+          <li>Care Instructions: Machine wash or professional dry clean</li>
+        </ul>
       </div>
     </div>
-    <hr>
-    <div class="About-item">
-    <h2>About this item</h2>
-     <ul>
-      <li>Feature: square neck, cutout, puff sleeve, ruffle hem, tie back aline dress</li>
-      <li>Fabric has some stretch,and it's soft and comfortable</li>
-      <li>Suitable for daily wear, holidays, dating, vacation, weekend casual</li>
-      <li>Care Instructions: Machine wash or professional dry clean</li>
-     </ul>
-    </div>
-  </div>
 
   <div class="add-to-cart-card">
     <div class="price-container">
@@ -110,7 +128,6 @@
           <div class="progress-bar-container">
             <div class="progress-bar" [style.width.%]="percentage"></div>
           </div>
-          <span>{{ percentage | number: '1.0-0' }}%</span>
         </div>
       </div>
     </div>
@@ -131,7 +148,7 @@
       <p class="report" style="margin: 0px; ">
         <a href="" style="color: black;">Report</a>
       </p>
+
     </div>
   </div>
-</div>
 </div>

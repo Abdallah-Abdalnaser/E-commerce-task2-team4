@@ -1,74 +1,8 @@
 <div class="container product-container">
-  <div class="select-product" >
-  <h1>Delivery Day</h1>
-  <div class="radio">
-    <input type="radio">
-    <p>Get It in 2 Days</p>
+  <div class="select-product">
+    <app-productsfilteration></app-productsfilteration>
   </div>
-  <h1>Customer Reviews</h1>
-  <div class="rate-first">
-      <app-star-rating [rating]="rating"></app-star-rating>
-      <p>&UP</p>
+  <div class="product-section">
+    <app-resultsearch></app-resultsearch>
   </div>
-    <div class="brand-filter" >
-    <h1>Brands</h1>
-    <div *ngFor="let category of categories">
-      <label [for]="category"  class="radio-container">
-        <input
-        type="radio"
-        [value]="category"
-        [(ngModel)]="selectedCategory"
-        (change)="filterProducts()"
-        id="{{category}}"
-      />
-      <span class="radio-checkmark"></span>
-        {{ category }}
-      </label>
-    </div>
-    </div>
-    <div class="price-filter" >
-      <h1>Price Range</h1>
-      <label >
-        <input  type="radio" [(ngModel)]="selectedPriceRange" value="all" (change)="filterProductsprice()" checked />
-        All
-      </label>
-
-      <label>
-        <input type="radio" [(ngModel)]="selectedPriceRange" value="under-20" (change)="filterProductsprice()" />
-        Under $20
-      </label>
-
-      <label>
-        <input type="radio" [(ngModel)]="selectedPriceRange" value="20-50" (change)="filterProductsprice()"  />
-        $20 - $50
-      </label>
-
-      <label>
-        <input type="radio" [(ngModel)]="selectedPriceRange" value="50-above" (change)="filterProductsprice()" />
-        $50 and above
-      </label>
-    </div>
-
-  </div>
-  <div class="product-section" *ngIf="filteredProducts.length > 0">
-    <div class="cards-container">
-      <div class="cards" *ngFor="let product of filteredProducts" (click)="navigateToProduct(product.id)">
-        <figure>
-          <img [src]="product.images[0]" alt="{{ product.title }}">
-        </figure>
-        <h2>{{ product.description }}</h2>
-        <div class="rate">
-          <app-basic-star [rating]="product.rating" style="margin-top:10px;"></app-basic-star>
-          <select class="quantity-select"></select>
-          <p class="rating-text">{{ product.minimumOrderQuantity }}</p>
-        </div>
-        <p class="policy">{{ product.returnPolicy }}</p>
-        <p class="price">₹{{ product.price }} <span>({{ product.discountPercentage }}% off)</span></p>
-        <p class="save">Save extra with No Cost EMI</p>
-        <p class="delivery">Free delivery : {{ product.shippingInformation }} <span>7:00am - 9:00pm</span></p>
-        <button class="Add">Add to cart</button>
-      </div>
-    </div>
-  </div>
-  <div *ngIf="filteredProducts.length === 0">No products available.</div>
 </div>

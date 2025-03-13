@@ -1,0 +1,133 @@
+.product-section {
+  padding: 20px;
+  width: 2000px;
+  height: auto;
+  gap: 19px;
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
+    gap: 15px;
+}
+.quantity-select {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-right: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.cards {
+  width: fit-content;
+  gap: 10.78px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+.cards figure {
+  max-height: 20rem;
+}
+.cards figure img ,.cards figure {
+  width: 100%;
+  height: 100%;
+}
+.cards h2{
+  font-size: 1rem;
+}
+.rate {
+  display: flex;
+  flex-direction: row;
+  width: 5px;
+  height: 5px;
+  margin-bottom: 20px;
+}
+.rate p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16.65px;
+  line-height: 20.63px;
+  letter-spacing: 0%;
+  color: #1F8394;
+}
+.policy {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12.94px;
+  line-height: 16.03px;
+  letter-spacing: 0%;
+  color: #717171;
+  width: 172.03231811523438px;
+  height: 16px;
+}
+.price {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 21.57px;
+  line-height: 26.1px;
+  letter-spacing: 0%;
+  margin: 0px;
+}
+.price span {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 13.42px;
+  line-height: 16.25px;
+  letter-spacing: 0%;
+  color: #717171;
+}
+.save {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12.94px;
+  line-height: 15.66px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #7F7F7F;
+  margin: 0px;
+}
+.delivery {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12.94px;
+  line-height: 15.66px;
+  letter-spacing: 0%;
+  color: #000000;
+  width: 238.86672973632812px;
+  height: 32px;
+}
+.delivery span {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 12.94px;
+  line-height: 15.66px;
+  letter-spacing: 0%;
+  color: #000000;
+}
+
+.Add{
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 19.81px;
+  background-color: #FFCC00;
+  border: none;
+  margin: 0px;
+}
+
+
+.noproduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noproduct img {
+  width:20rem;
+}
+
+.noproduct span {
+  font-weight: 700;
+}
