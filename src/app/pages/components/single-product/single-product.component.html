@@ -1,125 +1,130 @@
 <div class="productcontainer">
-<div class="product-section" *ngIf="product">
-  <div class="small-image-container">
-    <div class="small-image"  (click)="changeImage(product.images[0])">
-      <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.images[0]}">
-        <img [src]="product.images[0]" alt="{{ product.title }}" class="small-image-img">
+  <div class="product-section" *ngIf="product">
+    <div class="small-image-container">
+      <div class="small-image" (click)="changeImage(product.images[0])">
+        <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.images[0]}">
+          <img [src]="product.images[0]" alt="{{ product.title }}" class="small-image-img">
+        </div>
       </div>
-    </div>
-    <div class="small-image" (click)="changeImage(product.thumbnail)">
-      <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.thumbnail}">
-        <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img" *ngIf="product.images && product.images.length > 0">
-      </div>
-    </div>
-  </div>
-  <div class="product-image">
-    <img [src]="selectedImage" alt="{{ product.title }}" class="large-image" *ngIf="product.images && product.images.length > 0">
-  </div>
-  <div class="product-details">
-    <h1 class="product-head">Brand:{{ product.title }}</h1>
-    <p>{{ product.description }}</p>
-    <div class="rating-container">
-      <p class="rating-text">{{ product.rating }}</p>
-      <app-star-rating [rating]="product.rating ? product.rating : 0"></app-star-rating>
-      <p class="product-paragraph" >{{ product.reviews.length }} ratings <span style="color: black;">|</span> Search this Page</p>
-    </div>
-    <hr>
-    <h2 class="currency-h2" > {{ product.price | currency:'SAR' }}</h2>
-    <p class="price-paragraph">All price include VAT.</p>
-    <div class="discount-container">
-      <p class="discount-p1">Sign in to redeem.</p>
-      <p class="discount-p2"><span style="background-color: #71ED58;">Extra 20%</span>off  with meem credit cards.</p>
-    </div>
-    <h2 class="discount-h2">Enter code MEEM20 at checkout. Discount by Amazon.</h2>
-    <div class="pay-details">
-      <div class="pay-first">
-        <img src="../../../../assets/image 620.png"  >
-        <h2>Electronic <br>payment Only</h2>
-      </div>
-      <div class="pay-first">
-        <img src="../../../../assets/image 621.png" >
-        <h2>30 days <br>Returnable</h2>
-      </div>
-      <div class="pay-first">
-        <img  src="../../../../assets/image 622.png"  >
-        <h2>Secure <br>transaction</h2>
-      </div>
-    </div>
-    <hr>
-    <div class="About-item">
-    <h2>About this item</h2>
-     <ul>
-      <li>Feature: square neck, cutout, puff sleeve, ruffle hem, tie back aline dress</li>
-      <li>Fabric has some stretch,and it's soft and comfortable</li>
-      <li>Suitable for daily wear, holidays, dating, vacation, weekend casual</li>
-      <li>Care Instructions: Machine wash or professional dry clean</li>
-     </ul>
-    </div>
-  </div>
-
-  <div class="add-to-cart-card">
-    <h2> {{ product.price | currency:'SAR' }}</h2>
-    <p>{{product.shippingInformation}}</p>
-    <p class="details">Details</p>
-    <div class="Location">
-      <img class="location-icon" src="../../../../assets/Vector.png" alt="Location Icon">
-      <p class="details">Delivery to Riyadh - Update<br>Location</p>
-    </div>
-    <p class="details" style="color: #B12704;">Usually ships within 4 to 5 days</p>
-    <div class="quantity-selector">
-      <select id="quantity" class="quantity-dropdown" >
-        <option value="" disabled selected> Quantity:1</option> <!-- Placeholder option -->
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-    <button  class="button-cart" style="background-color: #FFD814;">Add To Cart</button>
-    <button class="button-cart" style="background-color: #FFA41C;">Buy Now</button>
-    <p class="ship-owner">Ships From <span style="margin-left: 20px;">{{product.brand}}</span></p>
-    <p class="ship-owner">Sold by <span style="margin-left: 48px; color: #1F8394; text-align: center;">{{product.brand}}</span></p>
-    <p class="ship-owner">Payment <span style="margin-left: 38px; color: #1F8394;">Secure Transaction</span></p>
-    <button class="Addtolist">Add to list</button>
-  </div>
-</div>
-<hr>
-<div class="reviews-section" *ngIf="product">
-  <div class="rate-container">
-    <h2>Customer Reviews</h2>
-     <div class="rate">
-      <app-star-rating [rating]="product.rating" style="margin-top: 10px;"></app-star-rating>
-      <p class="ratingtext">{{ product.rating }} out of 5</p>
-     </div>
-    <div class="rating-summary">
-      <h2>Global Rating</h2>
-      <div *ngFor="let percentage of ratingPercentages; let i = index">
-        <div class="star-rating">
-          <span>{{ i+1 }} Star</span>
-          <div class="progress-bar-container">
-            <div class="progress-bar" [style.width.%]="percentage"></div>
-          </div>
-          <span>{{ percentage | number: '1.0-0' }}%</span>
+      <div class="small-image" (click)="changeImage(product.thumbnail)">
+        <div class="inner-border" [ngClass]="{'selected': selectedThumbnail === product.thumbnail}">
+          <img [src]="product.thumbnail" alt="{{ product.title }}" class="small-image-img"
+            *ngIf="product.images && product.images.length > 0">
         </div>
       </div>
     </div>
-  </div>
-  <div class="comments-section">
-    <h3>Comments</h3>
-    <div *ngFor="let review of product.reviews" class="comment">
-      <div style="display: flex ; flex-direction: row;">
-        <img src="../../../../assets/image.png" style="width: 44px;height: 44px; margin-top: 10px;"><h2 class="comment-name">{{review.reviewerName}}</h2>
+    <div class="product-image">
+      <img [src]="selectedImage" alt="{{ product.title }}" class="large-image"
+        *ngIf="product.images && product.images.length > 0">
+    </div>
+    <div class="product-details">
+      <h1 class="product-head">Brand:{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+      <div class="rating-container">
+        <p class="rating-text">{{ product.rating }}</p>
+        <app-star-rating [rating]="product.rating ? product.rating : 0"></app-star-rating>
+        <p class="product-paragraph">{{ product.reviews.length }} ratings <span style="color: black;">|</span> Search
+          this Page</p>
       </div>
-      <div class="rate-comment" style="display: flex; flex-direction: row;">
-        <app-star-rating [rating]="review.rating" style="margin-top: 10px;"></app-star-rating>
-        <h3>Lindooo</h3>
+      <hr>
+      <h2 class="currency-h2"> {{ product.price | currency:'SAR' }}</h2>
+      <p class="price-paragraph">All price include VAT.</p>
+      <div class="discount-container">
+        <p class="discount-p1">Sign in to redeem.</p>
+        <p class="discount-p2"><span style="background-color: #71ED58;">Extra 20%</span>off with meem credit cards.</p>
       </div>
-      <p class="comment-date">{{review.date}}</p>
-      <h4 class="verfied">Verified Purchase</h4>
-      <p class="comment-content">{{ review.comment }}</p>
-      <p class="comment-name" style="margin: 0px;">Report</p>
+      <h2 class="discount-h2">Enter code MEEM20 at checkout. Discount by Amazon.</h2>
+      <div class="pay-details">
+        <div class="pay-first">
+          <img src="../../../../assets/image 620.png">
+          <h2>Electronic <br>payment Only</h2>
+        </div>
+        <div class="pay-first">
+          <img src="../../../../assets/image 621.png">
+          <h2>30 days <br>Returnable</h2>
+        </div>
+        <div class="pay-first">
+          <img src="../../../../assets/image 622.png">
+          <h2>Secure <br>transaction</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="About-item">
+        <h2>About this item</h2>
+        <ul>
+          <li>Feature: square neck, cutout, puff sleeve, ruffle hem, tie back aline dress</li>
+          <li>Fabric has some stretch,and it's soft and comfortable</li>
+          <li>Suitable for daily wear, holidays, dating, vacation, weekend casual</li>
+          <li>Care Instructions: Machine wash or professional dry clean</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="add-to-cart-card">
+      <h2> {{ product.price | currency:'SAR' }}</h2>
+      <p>{{product.shippingInformation}}</p>
+      <p class="details">Details</p>
+      <div class="Location">
+        <img class="location-icon" src="../../../../assets/Vector.png" alt="Location Icon">
+        <p class="details">Delivery to Riyadh - Update<br>Location</p>
+      </div>
+      <p class="details" style="color: #B12704;">Usually ships within 4 to 5 days</p>
+      <div class="quantity-selector">
+        <select id="quantity" class="quantity-dropdown">
+          <option value="" disabled selected> Quantity:1</option> <!-- Placeholder option -->
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <button class="button-cart" style="background-color: #FFD814;">Add To Cart</button>
+      <button class="button-cart" style="background-color: #FFA41C;">Buy Now</button>
+      <p class="ship-owner">Ships From <span style="margin-left: 20px;">{{product.brand}}</span></p>
+      <p class="ship-owner">Sold by <span
+          style="margin-left: 48px; color: #1F8394; text-align: center;">{{product.brand}}</span></p>
+      <p class="ship-owner">Payment <span style="margin-left: 38px; color: #1F8394;">Secure Transaction</span></p>
+      <button class="Addtolist">Add to list</button>
     </div>
   </div>
-</div>
+  <hr>
+  <div class="reviews-section" *ngIf="product">
+    <div class="rate-container">
+      <h2>Customer Reviews</h2>
+      <div class="rate">
+        <app-star-rating [rating]="product.rating" style="margin-top: 10px;"></app-star-rating>
+        <p class="ratingtext">{{ product.rating }} out of 5</p>
+      </div>
+      <div class="rating-summary">
+        <h2>Global Rating</h2>
+        <div *ngFor="let percentage of ratingPercentages; let i = index">
+          <div class="star-rating">
+            <span>{{ i+1 }} Star</span>
+            <div class="progress-bar-container">
+              <div class="progress-bar" [style.width.%]="percentage"></div>
+            </div>
+            <span>{{ percentage | number: '1.0-0' }}%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <div *ngFor="let review of product.reviews" class="comment">
+        <div style="display: flex ; flex-direction: row;">
+          <img src="../../../../assets/image.png" style="width: 44px;height: 44px; margin-top: 10px;">
+          <h2 class="comment-name">{{review.reviewerName}}</h2>
+        </div>
+        <div class="rate-comment" style="display: flex; flex-direction: row;">
+          <app-star-rating [rating]="review.rating" style="margin-top: 10px;"></app-star-rating>
+          <h3>Lindooo</h3>
+        </div>
+        <p class="comment-date">{{review.date}}</p>
+        <h4 class="verfied">Verified Purchase</h4>
+        <p class="comment-content">{{ review.comment }}</p>
+        <p class="comment-name" style="margin: 0px;">Report</p>
+      </div>
+    </div>
+  </div>
 </div>

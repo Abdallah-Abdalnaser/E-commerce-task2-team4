@@ -14,9 +14,10 @@ import { BasicStarComponent } from './components/basic-star/basic-star.component
 import {register as registerSwiperElements} from 'swiper/element/bundle';
 import { SliderComponent } from './components/home/slider/slider.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { ResultsearchComponent } from './components/products/resultsearch/resultsearch.component';
+import { ProductsfilterationComponent } from './components/products/productsfilteration/productsfilteration.component';
 
 registerSwiperElements();
-
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ registerSwiperElements();
     CategoryFilterPipe,
     BasicStarComponent,
     SliderComponent,
+    ResultsearchComponent,
+    ProductsfilterationComponent,
   ],
   imports: [
     ReactiveFormsModule,

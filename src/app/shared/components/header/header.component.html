@@ -1,84 +1,8 @@
 <header>
   <div class=" row">
-    <div class="left col row">
-      <div class="col" id="logo">
-        <img src="/assets/images/Amazon.svg" alt="">
-      </div>
-      <div class="col" id="location">
-        <fa-icon [icon]="faLocationDot"></fa-icon>
-        <div class="info">
-          <span>Deliver to</span>
-          <span>Egypt</span>
-        </div>
-      </div>
-      <div class="loginandcart">
-        <div class="col" id="login">
-          <a href="#">
-            Sign In
-            <fa-icon [icon]="faAngleRight"></fa-icon>
-            <fa-icon [icon]="faUser"></fa-icon>
-          </a>
-        </div>
-        <div class="col" id="Cart">
-          <img src="/assets/images/cart.svg" alt="">
-          <span class="counter">0</span>
-          <span class="name">Cart</span>
-        </div>
-      </div>
-    </div>
-    <div class="middel col row">
-      <div class="col" id="search">
-        <div class="categories">
-          <select name="categories" id="categories">
-            <optgroup>
-              <option value="All selected">All</option>
-            </optgroup>
-          </select>
-        </div>
-        <input type="search" name="productname" id="productname" placeholder="Search Amazon">
-        <button>
-          <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
-        </button>
-      </div>
-    </div>
-    <div class="right col row">
-      <div class="col" id="lanuguage">
-        <div class="info">
-          <img src="/assets/images/Egypt.svg" alt="">
-          <span>EN</span>
-        </div>
-        <form action="">
-          <div class="ar">
-            <label for="ar">
-              <input type="radio" name="lanuguage" id="ar">
-              العربيه-AR
-            </label>
-          </div>
-          <div class="en">
-            <label for="en">
-              <input type="radio" name="lanuguage" id="en" checked>
-              English-EN
-            </label>
-          </div>
-        </form>
-      </div>
-      <div class="col" id="login">
-        <span>Hello, sign in</span>
-        <span>Account & Lists</span>
-        <div class="signin">
-          <button>Sign in</button>
-        </div>
-      </div>
-      <div class="col" id="ReturnsOrders">
-        <a href="">Orders</a>
-      </div>
-      <div class="col" id="Cart">
-        <img src="/assets/images/cart.svg" alt="">
-        <span class="counter">0</span>
-        <span class="name">Cart</span>
-      </div>
-    </div>
+    <app-logo-location class="left col row"></app-logo-location>
+    <app-search class="middel col row"></app-search>
+    <app-userinfo class="right col row"></app-userinfo>
   </div>
-  <!-- <app-navigation></app-navigation> -->
 </header>
 <app-navigation></app-navigation>

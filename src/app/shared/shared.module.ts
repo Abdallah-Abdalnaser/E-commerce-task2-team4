@@ -7,7 +7,10 @@ import { NavigationComponent } from './components/header/navigation/navigation.c
 import { FooterLinksComponent } from './components/footer/footer-links/footer-links.component';
 import { FooterLanguageSelectorComponent } from './components/footer/footer-language-selector/footer-language-selector.component';
 import { FooterInfoComponent } from './components/footer/footer-info/footer-info.component';
-
+import { SearchComponent } from './components/header/search/search.component';
+import { UserinfoComponent } from './components/header/userinfo/userinfo.component';
+import { LogoLocationComponent } from './components/header/logo-location/logo-location.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -17,11 +20,15 @@ import { FooterInfoComponent } from './components/footer/footer-info/footer-info
     NavigationComponent,
     FooterLinksComponent,
     FooterLanguageSelectorComponent,
-    FooterInfoComponent
+    FooterInfoComponent,
+    SearchComponent,
+    UserinfoComponent,
+    LogoLocationComponent
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   exports: [
     HeaderComponent,

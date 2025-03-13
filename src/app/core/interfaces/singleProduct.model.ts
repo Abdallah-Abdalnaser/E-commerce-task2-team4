@@ -1,3 +1,5 @@
+import { Review } from "./Review.model";
+
 export interface Product {
   id: number;
   title: string;
@@ -30,11 +32,4 @@ export interface Product {
   };
   images: string[];
   thumbnail: string;
-}
-export interface Review {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
 }
