@@ -34,9 +34,11 @@
 .cards figure img ,.cards figure {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .cards h2{
   font-size: 1rem;
+  cursor: pointer;
 }
 .rate {
   display: flex;

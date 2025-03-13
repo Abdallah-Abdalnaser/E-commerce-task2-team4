@@ -2,9 +2,9 @@
 <div class="cards-container">
   <div class="cards" *ngFor="let product of filteredProducts.products">
     <figure>
-      <img [src]="product.images[0]" alt="{{ product.title }}">
+      <img [src]="product.images[0]" alt="{{ product.title }}" [routerLink]="['/SingleProduct/',product.id]">
     </figure>
-    <h2>{{ product.description }}</h2>
+    <h2 [routerLink]="['/SingleProduct/',product.id]">{{ product.description }}</h2>
     <div class="rate">
       <app-basic-star [rating]="product.rating" style="margin-top:10px;"></app-basic-star>
       <select class="quantity-select"></select>
