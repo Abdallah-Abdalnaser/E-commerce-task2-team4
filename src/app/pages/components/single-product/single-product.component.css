@@ -335,6 +335,7 @@ hr {
 .reviews-section {
   display: flex;
   flex-direction: row;
+  gap: 2rem;
 }
 .rate-container {
   display: flex;
@@ -369,7 +370,7 @@ hr {
 }
 .rating-summary {
   margin-top: 0px;
-  width: 400px;
+  width: fit-content;
   height: 400px;
 }
 .rating-summary h2 {
@@ -385,6 +386,7 @@ hr {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  width: fit-content;
 }
 
 .progress-bar-container {
@@ -411,14 +413,15 @@ hr {
   margin-top: 15px;
   align-items: center;
   justify-content: center;
-  margin-left: 200px;
 }
 
 .comment {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Simple shadow effect */
+  box-shadow: 0 0px 5px #ccc; /* Simple shadow effect */
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .comment-date {
@@ -427,19 +430,14 @@ hr {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 16.52px;
-  line-height: 100%;
-  letter-spacing: 0%;
 }
 
 .comment-name {
   font-family: "Hind Vadodara", sans-serif;
   font-weight: 400;
-  font-size: 17.97px;
-  line-height: 26.92px;
-  letter-spacing: 0%;
-  color: #000000;
-  margin-left: 10px;
-  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--balck);
+  margin-bottom: 0px;
 }
 .rate-comment h3 {
   font-family: "Hind Vadodara", sans-serif;
@@ -474,6 +472,7 @@ hr {
   line-height: 20px;
   letter-spacing: 0%;
   color: #000000;
+  width: fit-content;
 }
 .report {
   font-family: "Hind Vadodara", sans-serif;
@@ -481,6 +480,7 @@ hr {
   font-size: 17.97px;
   line-height: 100%;
   letter-spacing: 0%;
+  width: fit-content;
 }
 @media (max-width: 768px) {
   .product-section {
@@ -531,6 +531,7 @@ hr {
   .reviews-section {
     flex-direction: column;
     align-items: center;
+    padding: 0px 1rem;
   }
 
   .rate-container {
