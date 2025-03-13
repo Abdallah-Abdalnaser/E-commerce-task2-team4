@@ -176,10 +176,10 @@
     </div>
     <div class="comments-section">
       <div *ngFor="let review of product.reviews" class="comment">
-        <div style="display: flex; flex-direction: row">
+        <div style="display: flex; flex-direction: row ;align-items: center;">
           <img
             src="../../../../assets/image.png"
-            style="width: 44px; height: 44px; margin-top: 10px"
+            style="width: 44px; height: 44px;margin-right: 0.5rem;"
           />
           <h2 class="comment-name">{{ review.reviewerName }}</h2>
         </div>
