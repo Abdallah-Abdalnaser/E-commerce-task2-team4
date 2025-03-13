@@ -28,6 +28,7 @@ registerSwiperElements();
     RegisterComponent,
     StarRatingComponent,
     CategoryFilterPipe,
+    BasicStarComponent,SliderComponent,
     BasicStarComponent,
     SliderComponent,
     ResultsearchComponent,
@@ -37,6 +38,8 @@ registerSwiperElements();
     ReactiveFormsModule,
     CommonModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   exports: [

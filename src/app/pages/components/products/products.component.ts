@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit , OnChanges{
-  @Input() products: Product[] = [];
+  products: Product[] = [];
   filteredProducts: Product[] = [];
   rating=4;
   categories = ['beauty', 'fragrances', 'furniture','groceries'];
