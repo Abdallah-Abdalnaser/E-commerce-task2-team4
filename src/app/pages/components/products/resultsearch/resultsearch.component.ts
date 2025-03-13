@@ -3,6 +3,7 @@ import { Product } from '../../../../core/interfaces/singleProduct.model';
 import { ProductServiceService } from '../../../../core/services/product-service.service';
 import { Subscription } from 'rxjs';
 import { products } from '../../../../core/interfaces/products.model';
+import { CartService } from '../../../../core/services/cart.service';
 
 @Component({
   selector: 'app-resultsearch',
@@ -18,9 +19,10 @@ export class ResultsearchComponent implements OnInit,OnDestroy {
     total:0,
   };
   data!:Subscription;
+  counter!:number;
 
 
-  constructor (private ProductServiceService:ProductServiceService) {}
+  constructor (private ProductServiceService:ProductServiceService ,private CartService:CartService) {}
 
   ngOnInit(): void {
     this.data= this.ProductServiceService.product.subscribe(
@@ -28,6 +30,20 @@ export class ResultsearchComponent implements OnInit,OnDestroy {
         this.filteredProducts = data;
       }
     )
+  }
+
+  addCart() {
+    this.CartService.counter.subscribe(
+      (data:number)=> {
+        console.log(data);
+        this.counter =data;
+      }
+    )
+    this.increaseCounter();
+  }
+
+  increaseCounter() {
+    this.CartService.counter.next(this.counter + 1)
   }
 
   ngOnDestroy(): void {

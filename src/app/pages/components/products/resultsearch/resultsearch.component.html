@@ -14,7 +14,7 @@
     <p class="price">₹{{ product.price }} <span>({{ product.discountPercentage }}% off)</span></p>
     <p class="save">Save extra with No Cost EMI</p>
     <p class="delivery">Free delivery : {{ product.shippingInformation }} <span>7:00am - 9:00pm</span></p>
-    <button class="Add">Add to cart</button>
+    <button class="Add" (click)="addCart()">Add to cart</button>
   </div>
 </div>
 <div *ngIf="filteredProducts.products.length === 0" class="noproduct">

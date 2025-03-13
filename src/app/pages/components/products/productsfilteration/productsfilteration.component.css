@@ -1,0 +1,62 @@
+h1{
+  font-size: 1rem;
+  color: var(--black);
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+}
+.radio p {
+  font-size: 0.9rem;
+  padding: 0px 0.5rem;
+  font-weight: 600;
+  margin: 0px;
+}
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.radio-container input[type="radio"] {
+  appearance: none;
+}
+.radio-checkmark {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #060707;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+.radio-container input[type="radio"]:checked + .radio-checkmark {
+  background-color: #060707;
+}
+.radio-container input[type="radio"]:checked + .radio-checkmark::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.price-filter {
+  display: flex;
+  flex-direction: column;
+}
+.rate-first {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rate-first p {
+  margin: 0px;
+}
