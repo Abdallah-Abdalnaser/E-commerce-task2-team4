@@ -32,18 +32,8 @@ export class ResultsearchComponent implements OnInit,OnDestroy {
     )
   }
 
-  addCart() {
-    this.CartService.counter.subscribe(
-      (data:number)=> {
-        console.log(data);
-        this.counter =data;
-      }
-    )
-    this.increaseCounter();
-  }
-
-  increaseCounter() {
-    this.CartService.counter.next(this.counter + 1)
+  addCart(product:Product) {
+    this.CartService.AddCart(product);
   }
 
   ngOnDestroy(): void {
