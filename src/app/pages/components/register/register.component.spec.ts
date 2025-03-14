@@ -17,6 +17,8 @@ describe('RegisterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
+    // Clear localStorage before each test
+    localStorage.clear();
     fixture.detectChanges();
   });
 
@@ -34,9 +36,9 @@ describe('RegisterComponent', () => {
 
   it('should validate phone number format', () => {
     const phoneControl = component.registerForm.get('phone');
-    phoneControl?.setValue('123'); // Invalid: less than 10 digits
+    phoneControl?.setValue('123');
     expect(phoneControl?.valid).toBeFalse();
-    phoneControl?.setValue('1234567890'); // Valid: 10 digits
+    phoneControl?.setValue('1234567890');
     expect(phoneControl?.valid).toBeTrue();
   });
 
@@ -62,9 +64,9 @@ describe('RegisterComponent', () => {
 
   it('should validate verification code format', () => {
     const codeControl = component.verifyForm.get('code');
-    codeControl?.setValue('12345'); // Invalid: less than 6 digits
+    codeControl?.setValue('12345');
     expect(codeControl?.valid).toBeFalse();
-    codeControl?.setValue('123456'); // Valid: 6 digits
+    codeControl?.setValue('123456');
     expect(codeControl?.valid).toBeTrue();
   });
 
@@ -72,5 +74,47 @@ describe('RegisterComponent', () => {
     const routerSpy = spyOn(component['router'], 'navigate');
     component.navigateToSignIn();
     expect(routerSpy).toHaveBeenCalledWith(['/login']);
+  });
+
+  it('should store user data in localStorage on successful verification', () => {
+    component.registerForm.patchValue({
+      name: 'John Doe',
+      phone: '1234567890',
+      password: 'password123'
+    });
+    component.onStep1Submit();
+    
+    component.verifyForm.patchValue({
+      code: '123456'
+    });
+    const routerSpy = spyOn(component['router'], 'navigate');
+    component.onStep2Submit();
+    
+    const storedUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
+    expect(storedUser.name).toBe('John Doe');
+    expect(storedUser.phone).toBe('1234567890');
+    expect(storedUser.verified).toBeTrue();
+    expect(routerSpy).toHaveBeenCalledWith(['/login']);
+  });
+
+  it('should check if user already exists', () => {
+    const userData = {
+      name: 'John Doe',
+      phone: '1234567890',
+      password: 'password123',
+      verified: true,
+      registrationDate: new Date().toISOString()
+    };
+    localStorage.setItem('registeredUser', JSON.stringify(userData));
+    
+    component.registerForm.patchValue({
+      phone: '1234567890'
+    });
+    expect(component.checkExistingUser()).toBeTrue();
+    
+    component.registerForm.patchValue({
+      phone: '0987654321'
+    });
+    expect(component.checkExistingUser()).toBeFalse();
   });
 });

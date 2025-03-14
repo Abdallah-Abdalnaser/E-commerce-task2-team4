@@ -38,8 +38,22 @@ export class RegisterComponent {
     if (this.verifyForm.valid) {
       // Simulate verification
       console.log('Verifying code:', this.verifyForm.get('code')?.value);
+      
+      // Store user data in localStorage
+      const userData = {
+        name: this.registerForm.get('name')?.value,
+        phone: this.registerForm.get('phone')?.value,
+        password: this.registerForm.get('password')?.value,
+        verified: true,
+        registrationDate: new Date().toISOString()
+      };
+      
+      // Save to localStorage
+      localStorage.setItem('registeredUser', JSON.stringify(userData));
+      
       alert('Account created successfully! Phone number verified.');
-      // Navigate or complete signup process here
+      // Navigate to login page after successful registration
+      this.router.navigate(['/login']);
     }
   }
 
@@ -56,6 +70,16 @@ export class RegisterComponent {
   }
 
   navigateToSignIn() {
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/login']); // Fixed capitalization to match routing convention
+  }
+
+  // Optional: Method to check if user already exists
+  checkExistingUser(): boolean {
+    const existingUser = localStorage.getItem('registeredUser');
+    if (existingUser) {
+      const user = JSON.parse(existingUser);
+      return user.phone === this.registerForm.get('phone')?.value;
+    }
+    return false;
   }
 }
