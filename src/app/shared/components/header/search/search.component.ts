@@ -18,7 +18,6 @@ export class SearchComponent {
     search(productname:HTMLInputElement) {
       this.SearchService.searchProductByName(productname.value).subscribe(
         (data)=> {
-            console.log('work');
             this.Router.navigate(['/products'],{relativeTo:this.Route})
             this.ProductServiceService.product.next(data);
           }

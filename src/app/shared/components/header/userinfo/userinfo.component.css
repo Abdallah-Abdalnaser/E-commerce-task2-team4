@@ -135,11 +135,13 @@
 
 #Cart .counter {
   position: absolute;
-  top: -7px;
-  left: 25px;
-  font-size: 1.2rem;
+  top: -5px;
+  left: 19%;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--orange);
+  width: 32%;
+  text-align: center;
 }
 
 #Cart .name {
