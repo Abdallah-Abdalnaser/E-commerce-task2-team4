@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Customers’ Most-Loved Products",
+    "items": [
+      {
+        "image":"../assets/images/home-image/img33.png",
+        "name":""
+      },
+      {
+        "image":"../assets/images/home-image/img34.png",
+        "name":""
+      },
+      {
+        "image":"../assets/images/home-image/img35.png",
+        "name":""
+      },
+      {
+        "image":"../assets/images/home-image/img36.png",
+        "name":""
+      }
+    ]
+  },
+  {
+    "title": "Latest styles | Dresses, kurta & more | 50% -...",
+    "items": [
+      {
+        "image":"../assets/images/home-image/img41.png",
+        "name":"Kurta & sets"
+      },
+      {
+        "image":"../assets/images/home-image/img42.png",
+        "name":"Tops"
+      },
+      {
+        "image":"../assets/images/home-image/img43.png",
+        "name":"Dresses"
+      },
+      {
+        "image":"../assets/images/home-image/img44.png",
+        "name":"Sarees"
+      }
+    ]
+  },
+  {
+    "title": "Best Sellers in Beauty",
+    "items": [
+      {
+        "image":"../assets/images/home-image/img37.png",
+        "name":""
+      },
+      {
+        "image":"../assets/images/home-image/img38.png",
+        "name":""
+      },
+      {
+        "image":"../assets/images/home-image/img39.png",
+        "name":""
+      },
+      {
+        "image":"../assets/images/home-image/img40.png",
+        "name":""
+      }
+    ]
+  },
+  {
+    "title": "Latest styles | Dresses, kurta & more | 50% -...",
+    "items": [
+      {
+        "image":"../assets/images/home-image/img41.png",
+        "name":"Kurta & sets"
+      },
+      {
+        "image":"../assets/images/home-image/img42.png",
+        "name":"Tops"
+      },
+      {
+        "image":"../assets/images/home-image/img43.png",
+        "name":"Dresses"
+      },
+      {
+        "image":"../assets/images/home-image/img44.png",
+        "name":"Sarees"
+      }
+    ]
+  }
+]

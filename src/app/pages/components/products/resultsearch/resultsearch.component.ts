@@ -35,7 +35,6 @@ export class ResultsearchComponent implements OnInit,OnDestroy {
   addCart() {
     this.CartService.counter.subscribe(
       (data:number)=> {
-        console.log(data);
         this.counter =data;
       }
     )

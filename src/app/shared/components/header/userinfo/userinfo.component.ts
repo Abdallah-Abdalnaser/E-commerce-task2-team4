@@ -14,7 +14,6 @@ export class UserinfoComponent implements OnInit {
   ngOnInit(): void {
     this.CartService.counter.subscribe(
       (data:number) => {
-        console.log(data);
         this.counter =data;
       }
     )

@@ -1,7 +1,10 @@
 header {
+  position: sticky;
+  top: 0px;
   background-color: var(--DarkBlue);
   color: var(--white);
   padding: 0.6rem;
+  z-index: 10;
 }
 
 header .row {
