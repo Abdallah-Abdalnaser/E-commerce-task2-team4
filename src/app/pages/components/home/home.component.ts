@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
     this.AmazoneOfferService.getOffers().subscribe(
       (data:Amazonoffer[])=> {
         this.offers = data;
-        console.log(this.offers);
       }
     )
   }
