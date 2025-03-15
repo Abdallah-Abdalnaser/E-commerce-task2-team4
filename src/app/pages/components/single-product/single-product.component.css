@@ -494,11 +494,14 @@ hr {
   .small-image-container {
     margin-top: 20px;
     margin-right: 0;
+    order:2;
+    flex-direction: row;
   }
 
   .product-image {
     margin-right: 0;
     margin-bottom: 20px;
+    order: 1;
   }
   .rating-container {
     flex-direction: column;
@@ -513,11 +516,13 @@ hr {
     flex: 1;
     margin-right: 0;
     text-align: center;
+    order: 3;
   }
 
   .add-to-cart-card {
     width: 100%;
     height: auto;
+    order: 4;
   }
 
   .quantity-dropdown {
