@@ -39,10 +39,12 @@
       <h1 class="product-head">Brand:{{ product.title }}</h1>
       <p>{{ product.description }}</p>
       <div class="rating-container">
+        
         <p class="rating-text">{{ product.rating }}</p>
         <app-star-rating
           [rating]="product.rating ? product.rating : 0"
         ></app-star-rating>
+
         <p class="product-paragraph">
           {{ product.reviews.length }} ratings
           <span style="color: black">|</span> Search this Page
