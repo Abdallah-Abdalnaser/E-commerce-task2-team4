@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , DoCheck, OnInit, SimpleChanges } from '@angular/core';
 import { CartService } from '../../../../core/services/cart.service';
 
 @Component({
@@ -7,16 +7,14 @@ import { CartService } from '../../../../core/services/cart.service';
   templateUrl: './userinfo.component.html',
   styleUrl: './userinfo.component.css'
 })
-export class UserinfoComponent implements OnInit {
+export class UserinfoComponent implements OnInit , DoCheck {
   counter:number=0;
   constructor(private CartService:CartService) {}
 
   ngOnInit(): void {
-    this.CartService.counter.subscribe(
-      (data:number) => {
-        console.log(data);
-        this.counter =data;
-      }
-    )
+  }
+
+  ngDoCheck(): void {
+    this.counter = this.CartService.numberOfProductInCart();
   }
 }

@@ -1,3 +1,4 @@
+// login.component.ts
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,6 +15,7 @@ export class LoginComponent {
   forgotPasswordForm: FormGroup;
   currentStep = 1;
   showForgotPassword = false;
+  loginError: string | null = null;
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.emailForm = this.fb.group({
@@ -31,23 +33,48 @@ export class LoginComponent {
 
   onEmailSubmit() {
     if (this.emailForm.valid) {
-      this.currentStep = 2;
+      const registeredUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
+      const input = this.emailForm.get('email')?.value;
+      
+      if (registeredUser.phone === input) {
+        this.currentStep = 2;
+        this.loginError = null;
+      } else {
+        this.loginError = 'No account found with this phone number';
+      }
     }
   }
 
   onPasswordSubmit() {
     if (this.passwordForm.valid) {
-      alert('Sign in successful!');
-      // Add backend sign-in logic here
+      const registeredUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
+      const inputPassword = this.passwordForm.get('password')?.value;
+
+      if (registeredUser.password === inputPassword) {
+        alert('Sign in successful!');
+        this.loginError = null;
+        // Here you could navigate to a dashboard or home page
+        this.router.navigate(['/home']);
+      } else {
+        this.loginError = 'Incorrect password';
+      }
     }
   }
 
   onForgotPasswordSubmit() {
     if (this.forgotPasswordForm.valid) {
-      alert('Password reset instructions sent to ' + this.forgotPasswordForm.get('forgotEmail')?.value);
-      this.showForgotPassword = false;
-      this.currentStep = 1;
-      this.passwordForm.reset();
+      const registeredUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
+      const forgotEmail = this.forgotPasswordForm.get('forgotEmail')?.value;
+
+      if (registeredUser.phone === forgotEmail) {
+        alert('Password reset instructions sent to ' + forgotEmail);
+        this.showForgotPassword = false;
+        this.currentStep = 1;
+        this.passwordForm.reset();
+        this.loginError = null;
+      } else {
+        this.loginError = 'No account found with this phone number';
+      }
     }
   }
 
@@ -55,6 +82,7 @@ export class LoginComponent {
     event.preventDefault();
     this.currentStep = 1;
     this.passwordForm.reset();
+    this.loginError = null;
   }
 
   showForgotPasswordForm(event: Event) {
@@ -69,6 +97,6 @@ export class LoginComponent {
   }
 
   navigateToSignup() {
-    this.router.navigate(['Register']);
+    this.router.navigate(['/register']); // Changed to lowercase to match Angular routing convention
   }
 }
