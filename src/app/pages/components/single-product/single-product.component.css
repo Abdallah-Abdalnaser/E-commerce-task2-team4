@@ -140,6 +140,7 @@ hr {
   letter-spacing: 0%;
   color: #000000;
   margin-bottom: 0px;
+
 }
 
 .rating-text {
@@ -515,7 +516,6 @@ hr {
   .product-details {
     flex: 1;
     margin-right: 0;
-    text-align: center;
     order: 3;
   }
 
@@ -548,7 +548,6 @@ hr {
     width: 100%;
     margin-top: 130px;
   }
-
   .comment {
     width: 100%;
   }
@@ -596,5 +595,8 @@ hr {
 
   .Addtolist {
     width: 100%;
+  }
+  .pay-details{
+    flex-wrap: wrap;
   }
 }
