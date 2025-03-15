@@ -37,28 +37,6 @@ export class ProductsfilterationComponent implements OnInit,OnDestroy{
     )
   }
 
-
-  filterProductsprice(price:HTMLInputElement):void{
-    switch (price.value) {
-      case 'all':
-        this.productService.AllProductwithoutpriceRange();
-        break;
-        case 'under-20':
-        this.productService.Productunder20();
-        break;
-        case '20-50':
-        this.productService.Productbetween20and50();
-        break;
-        case '50-above':
-        this.productService.AllProductabove50();
-        break;
-      default:
-        break;
-    }
-  }
-
-
-
   ngOnDestroy(): void {
     this.categoriesSubscription.unsubscribe();
   }
