@@ -2,7 +2,8 @@
   <div class="categories">
     <select name="categories" id="categories">
       <optgroup>
-        <option value="All selected">All</option>
+        <option value="All selected" selected>All</option>
+        <option value="All selected" *ngFor="let category of categories">{{category}}</option>
       </optgroup>
     </select>
   </div>
