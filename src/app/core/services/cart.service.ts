@@ -21,6 +21,9 @@ export class CartService {
 
 
   numberOfProductInCart():number {
+    if (localStorage.getItem('cart') === null) {
+      return 0;
+    }
     return JSON.parse(localStorage.getItem('cart')!).length;
   }
 }
