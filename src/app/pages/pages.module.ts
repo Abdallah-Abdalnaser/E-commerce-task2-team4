@@ -16,8 +16,6 @@ registerSwiperElements();
     HomeComponent,
     ProductsComponent,
     SingleProductComponent,
-    LoginComponent,
-    RegisterComponent,
     SliderComponent
   ],
   imports: [
