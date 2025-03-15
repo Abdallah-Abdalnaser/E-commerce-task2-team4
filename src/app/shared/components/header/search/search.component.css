@@ -29,6 +29,7 @@
   color: var(--Gray);
   font-size: 0.8rem;
   cursor:pointer;
+  width: 4rem;
 }
 
 #search input[type='search'] {
