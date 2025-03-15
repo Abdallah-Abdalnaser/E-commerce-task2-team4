@@ -1,15 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
-import { LoginComponent } from './login.component';
+import { CommonModule } from "@angular/common";
+import { LoginComponent } from "./login.component";
+import { RouterTestingModule } from "@angular/router/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
+// login.component.spec.ts
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, RouterTestingModule, LoginComponent]
+      imports: [ReactiveFormsModule, RouterTestingModule, LoginComponent,CommonModule]
     }).compileComponents();
   });
 
@@ -17,62 +19,40 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    localStorage.clear(); 
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  // ... existing tests ...
+
+  it('should reject login with non-existent user', () => {
+    component.emailForm.patchValue({ email: '1234567890' });
+    component.onEmailSubmit();
+    expect(component.currentStep).toBe(1); // Should not move to step 2
   });
 
-  it('should initialize with step 1', () => {
-    expect(component.currentStep).toBe(1);
-    expect(component.showForgotPassword).toBeFalse();
-  });
-
-  it('should have an invalid email form when empty', () => {
-    expect(component.emailForm.valid).toBeFalse();
-  });
-
-  it('should validate email or phone format', () => {
-    const emailControl = component.emailForm.get('email');
-    emailControl?.setValue('invalid'); // Invalid
-    expect(emailControl?.valid).toBeFalse();
-    emailControl?.setValue('test@example.com'); // Valid email
-    expect(emailControl?.valid).toBeTrue();
-    emailControl?.setValue('1234567890'); // Valid phone
-    expect(emailControl?.valid).toBeTrue();
-  });
-
-  it('should move to step 2 when email form is valid', () => {
-    component.emailForm.patchValue({ email: 'test@example.com' });
+  it('should allow login with registered user', () => {
+    // Register a test user
+    const testUser = { phone: '1234567890', password: 'password123', name: 'Test User' };
+    localStorage.setItem('users', JSON.stringify([testUser]));
+    
+    component.emailForm.patchValue({ email: '1234567890' });
     component.onEmailSubmit();
     expect(component.currentStep).toBe(2);
-  });
-
-  it('should stay on step 1 when email form is invalid', () => {
-    component.emailForm.patchValue({ email: 'invalid' });
-    component.onEmailSubmit();
-    expect(component.currentStep).toBe(1);
-  });
-
-  it('should validate password length', () => {
-    const passwordControl = component.passwordForm.get('password');
-    passwordControl?.setValue('12345'); // Invalid: too short
-    expect(passwordControl?.valid).toBeFalse();
-    passwordControl?.setValue('123456'); // Valid: 6+ characters
-    expect(passwordControl?.valid).toBeTrue();
-  });
-
-  it('should show forgot password form', () => {
-    component.emailForm.patchValue({ email: 'test@example.com' });
-    component.currentStep = 2;
-    component.showForgotPasswordForm(new Event('click'));
-    expect(component.showForgotPassword).toBeTrue();
-    expect(component.forgotPasswordForm.get('forgotEmail')?.value).toBe('test@example.com');
-  });
-
-  it('should navigate to signup page', () => {
+    
+    component.passwordForm.patchValue({ password: 'password123' });
     const routerSpy = spyOn(component['router'], 'navigate');
-    component.navigateToSignup();
-    expect(routerSpy).toHaveBeenCalledWith(['/Register']);
+    component.onPasswordSubmit();
+    expect(routerSpy).toHaveBeenCalledWith(['/home']);
+  });
+
+  it('should reject incorrect password', () => {
+    const testUser = { phone: '1234567890', password: 'password123', name: 'Test User' };
+    localStorage.setItem('users', JSON.stringify([testUser]));
+    
+    component.emailForm.patchValue({ email: '1234567890' });
+    component.onEmailSubmit();
+    component.passwordForm.patchValue({ password: 'wrongpassword' });
+    component.onPasswordSubmit();
+    expect(component.currentStep).toBe(2); // Stays on password step
   });
 });

@@ -1,3 +1,4 @@
+// login.component.ts
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -34,20 +35,48 @@ export class LoginComponent {
 
   onEmailSubmit() {
     if (this.emailForm.valid) {
+      // Check if user exists
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const userExists = users.some((user: any) => user.phone === this.emailForm.get('email')?.value);
+      if (!userExists) {
+        alert('No account found with this phone number!');
+        return;
+      }
       this.currentStep = 2;
     }
   }
 
   onPasswordSubmit() {
     if (this.passwordForm.valid) {
-      alert('Sign in successful!');
-      // Add backend sign-in logic here
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const emailOrPhone = this.emailForm.get('email')?.value;
+      const password = this.passwordForm.get('password')?.value;
+      
+      const user = users.find((u: any) => u.phone === emailOrPhone && u.password === password);
+      
+      if (user) {
+        alert('Sign in successful!');
+        // Store logged-in user info
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        this.router.navigate(['/home']); // Redirect to home page or dashboard
+      } else {
+        alert('Incorrect password!');
+      }
     }
   }
 
   onForgotPasswordSubmit() {
     if (this.forgotPasswordForm.valid) {
-      alert('Password reset instructions sent to ' + this.forgotPasswordForm.get('forgotEmail')?.value);
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const emailOrPhone = this.forgotPasswordForm.get('forgotEmail')?.value;
+      
+      const userExists = users.some((user: any) => user.phone === emailOrPhone);
+      if (!userExists) {
+        alert('No account found with this phone number!');
+        return;
+      }
+      
+      alert('Password reset instructions sent to ' + emailOrPhone);
       this.showForgotPassword = false;
       this.currentStep = 1;
       this.passwordForm.reset();
@@ -72,6 +101,6 @@ export class LoginComponent {
   }
 
   navigateToSignup() {
-    this.router.navigate(['Register']);
+    this.router.navigate(['/Register']);
   }
 }

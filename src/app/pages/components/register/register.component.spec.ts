@@ -34,9 +34,9 @@ describe('RegisterComponent', () => {
 
   it('should validate phone number format', () => {
     const phoneControl = component.registerForm.get('phone');
-    phoneControl?.setValue('123'); // Invalid: less than 10 digits
+    phoneControl?.setValue('123'); 
     expect(phoneControl?.valid).toBeFalse();
-    phoneControl?.setValue('1234567890'); // Valid: 10 digits
+    phoneControl?.setValue('1234567890'); 
     expect(phoneControl?.valid).toBeTrue();
   });
 
@@ -71,6 +71,6 @@ describe('RegisterComponent', () => {
   it('should navigate to sign-in page', () => {
     const routerSpy = spyOn(component['router'], 'navigate');
     component.navigateToSignIn();
-    expect(routerSpy).toHaveBeenCalledWith(['/login']);
+    expect(routerSpy).toHaveBeenCalledWith(['/Login']);
   });
 });
