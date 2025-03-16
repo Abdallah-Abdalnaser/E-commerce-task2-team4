@@ -71,7 +71,7 @@
 
 #login:hover > .signin {
   display: block;
-  z-index: 2;
+  z-index: 3;
 }
 
 #login span:first-of-type {
@@ -120,12 +120,16 @@
   font-weight: 600;
   color: var(--white);
   text-decoration: none;
+  cursor: pointer;
+
 }
 
 #Cart {
   position: relative;
   display: flex;
   align-items: flex-end;
+  cursor: pointer;
+
 }
 
 #Cart img {

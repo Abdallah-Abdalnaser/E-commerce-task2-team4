@@ -12,11 +12,12 @@ import { RouterLink } from '@angular/router';
 import { ProductsComponent } from './pages/components/products/products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SharedModule,
     PagesModule,
     FontAwesomeModule
+
   ],
   providers: [
     provideClientHydration(withEventReplay()),ProductServiceService,provideHttpClient()

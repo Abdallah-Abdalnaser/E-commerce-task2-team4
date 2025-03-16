@@ -3,6 +3,7 @@ import { Product } from '../../../core/interfaces/singleProduct.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServiceService } from '../../../core/services/product-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-single-product',
@@ -21,8 +22,7 @@ ratingPercentages: number[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductServiceService
-  ) {}
+    private productService: ProductServiceService,private CartService:CartService) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -64,4 +64,8 @@ ratingPercentages: number[] = [];
     this.selectedThumbnail = image;
 
   }
+  addCart(product:Product) {
+    this.CartService.AddCart(product);
+  }
+
 }

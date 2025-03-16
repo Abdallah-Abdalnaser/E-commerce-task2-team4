@@ -39,7 +39,7 @@
       <h1 class="product-head">Brand:{{ product.title }}</h1>
       <p>{{ product.description }}</p>
       <div class="rating-container">
-        
+
         <p class="rating-text">{{ product.rating }}</p>
         <app-star-rating
           [rating]="product.rating ? product.rating : 0"
@@ -120,7 +120,6 @@
       <div class="quantity-selector">
         <select id="quantity" class="quantity-dropdown">
           <option value="" disabled selected>Quantity:1</option>
-          <!-- Placeholder option -->
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -128,7 +127,7 @@
           <option value="5">5</option>
         </select>
       </div>
-      <button class="button-cart" style="background-color: #ffd814">
+      <button class="button-cart" style="background-color: #ffd814" (click)="addCart(product)">
         Add To Cart
       </button>
       <button class="button-cart" style="background-color: #ffa41c">

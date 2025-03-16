@@ -60,10 +60,10 @@
     <p class="small mb-3">Enter the email address or mobile phone number associated with your Amazon account.</p>
     <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPasswordSubmit()" novalidate>
       <div class="mb-3">
-        <label for="forgot-email" class="form-label fw-bold">Email or mobile phone number</label>
+        <label for="forgot-email" class="form-label fw-bold">mobile phone number</label>
         <input type="text" class="form-control" id="forgot-email" formControlName="forgotEmail" required>
         <div class="invalid-feedback" *ngIf="forgotPasswordForm.get('forgotEmail')?.touched && forgotPasswordForm.get('forgotEmail')?.invalid">
-          Please enter a valid email address or phone number.
+          Please enter a valid  phone number.
         </div>
         <div class="text-danger mt-2" *ngIf="loginError">{{loginError}}</div>
       </div>
