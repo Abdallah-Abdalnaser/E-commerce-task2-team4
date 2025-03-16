@@ -38,7 +38,7 @@ export class RegisterComponent {
     if (this.verifyForm.valid) {
       // Simulate verification
       console.log('Verifying code:', this.verifyForm.get('code')?.value);
-      
+
       // Store user data in localStorage
       const userData = {
         name: this.registerForm.get('name')?.value,
@@ -47,13 +47,13 @@ export class RegisterComponent {
         verified: true,
         registrationDate: new Date().toISOString()
       };
-      
+
       // Save to localStorage
       localStorage.setItem('registeredUser', JSON.stringify(userData));
-      
+
       alert('Account created successfully! Phone number verified.');
       // Navigate to login page after successful registration
-      this.router.navigate(['/login']);
+      this.router.navigate(['/Login']);
     }
   }
 

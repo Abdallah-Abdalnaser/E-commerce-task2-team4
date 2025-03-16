@@ -1,7 +1,6 @@
-import { Component, Input , OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Product } from '../../../../core/interfaces/singleProduct.model';
 import { ProductServiceService } from '../../../../core/services/product-service.service';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { products } from '../../../../core/interfaces/products.model';
 
@@ -9,32 +8,51 @@ import { products } from '../../../../core/interfaces/products.model';
   selector: 'app-productsfilteration',
   standalone: false,
   templateUrl: './productsfilteration.component.html',
-  styleUrl: './productsfilteration.component.css'
+  styleUrls: ['./productsfilteration.component.css']
 })
+export class ProductsfilterationComponent implements OnInit, OnDestroy {
+  rating = 4;
+  categories: string[] = [];
+  categoriesSubscription!: Subscription;
+  allProducts: Product[] = [];
+  filteredProducts: Product[] = [];
 
-export class ProductsfilterationComponent implements OnInit,OnDestroy{
-  rating=4;
-  categories:string[] = [];
-  categoriesSubscription!:Subscription;
-  productBycategoriesSubscription!:Subscription;
-
-
-  constructor(private productService: ProductServiceService,private router: Router) {}
+  constructor(private productService: ProductServiceService) {}
 
   ngOnInit(): void {
     this.categoriesSubscription = this.productService.getAllCategoriesOfProducts().subscribe(
-      (data:string[])=> {
+      (data: string[]) => {
         this.categories = data;
       }
-    )
+    );
+
+    this.productService.getAllProducts().subscribe((data: products) => {
+      this.allProducts = data.products;
+      this.filteredProducts = this.allProducts;
+      this.productService.product.next(data);
+    });
   }
 
-  filterProducts(CategoryName:HTMLInputElement): void {
-    this.productBycategoriesSubscription = this.productService.getProductsByCategoryName(CategoryName.value).subscribe(
-      (data:products)=> {
+  filterProducts(categoryName: HTMLInputElement): void {
+    this.productService.getProductsByCategoryName(categoryName.value).subscribe(
+      (data: products) => {
+        this.allProducts = data.products;
+        this.filteredProducts = this.allProducts;
         this.productService.product.next(data);
       }
-    )
+    );
+  }
+
+  filterProductsPrice(priceRange: string): void {
+    console.log('Filtering products by price range:', priceRange);
+    this.filteredProducts = this.productService.filterProductsByPriceRange(this.allProducts, priceRange);
+
+    this.productService.product.next({
+      limit: this.filteredProducts.length,
+      products: this.filteredProducts,
+      skip: 0,
+      total: this.filteredProducts.length,
+    });
   }
 
   ngOnDestroy(): void {

@@ -35,7 +35,7 @@ export class LoginComponent {
     if (this.emailForm.valid) {
       const registeredUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
       const input = this.emailForm.get('email')?.value;
-      
+
       if (registeredUser.phone === input) {
         this.currentStep = 2;
         this.loginError = null;
@@ -52,9 +52,8 @@ export class LoginComponent {
 
       if (registeredUser.password === inputPassword) {
         alert('Sign in successful!');
-        this.loginError = null;
-        // Here you could navigate to a dashboard or home page
         this.router.navigate(['/home']);
+        this.loginError = null;
       } else {
         this.loginError = 'Incorrect password';
       }
@@ -97,6 +96,6 @@ export class LoginComponent {
   }
 
   navigateToSignup() {
-    this.router.navigate(['/register']); // Changed to lowercase to match Angular routing convention
+    this.router.navigate(['/Register']); // Changed to lowercase to match Angular routing convention
   }
 }

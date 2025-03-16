@@ -18,26 +18,25 @@
       {{category}}
     </label>
   </div>
-</div>
-<!-- <div class="price-filter">
+</div><div class="price-filter">
   <h1>Price Range</h1>
   <label>
-    <input type="radio" name="price" value="all" (change)="filterProductsprice(allprice)" checked #allprice/>
+    <input type="radio" name="price" value="all" (change)="filterProductsPrice('all')" checked />
     All
   </label>
 
   <label>
-    <input type="radio" name="price" value="under-20" (change)="filterProductsprice(under20)" #under20/>
+    <input type="radio" name="price" value="under-20" (change)="filterProductsPrice('under-20')" />
     Under $20
   </label>
 
   <label>
-    <input type="radio" name="price" value="20-50" (change)="filterProductsprice(between20and50)" #between20and50/>
+    <input type="radio" name="price" value="20-50" (change)="filterProductsPrice('20-50')" />
     $20 - $50
   </label>
 
   <label>
-    <input type="radio" name="price" value="50-above" (change)="filterProductsprice(above50)" #above50/>
+    <input type="radio" name="price" value="50-above" (change)="filterProductsPrice('50-above')" />
     $50 and above
   </label>
-</div> -->
+</div>

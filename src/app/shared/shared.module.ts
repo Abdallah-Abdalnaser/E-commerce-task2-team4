@@ -11,6 +11,9 @@ import { SearchComponent } from './components/header/search/search.component';
 import { UserinfoComponent } from './components/header/userinfo/userinfo.component';
 import { LogoLocationComponent } from './components/header/logo-location/logo-location.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { OrderConfirmationDialogComponent } from './components/order-confirmation-dialog/order-confirmation-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -23,12 +26,13 @@ import { AppRoutingModule } from '../app-routing.module';
     FooterInfoComponent,
     SearchComponent,
     UserinfoComponent,
-    LogoLocationComponent
+    LogoLocationComponent,
+    OrderConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,MatButtonModule,MatDialogModule
   ],
   exports: [
     HeaderComponent,

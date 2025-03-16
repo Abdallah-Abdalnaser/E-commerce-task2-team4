@@ -19,17 +19,19 @@
   </form>
 </div>
 <div class="col" id="login">
-  <span>Hello, sign in</span>
-  <span>Account & Lists</span>
-  <div class="signin">
+  <span *ngIf="!userName">Hello, sign in</span>
+  <span *ngIf="!userName">Account & Lists</span>
+  <span *ngIf="userName">Welcome, {{ userName }}!</span>
+  <div class="signin" *ngIf="!userName">
     <button routerLink="/Login">Sign in</button>
   </div>
 </div>
-<div class="col" id="ReturnsOrders">
-  <a href="">Orders</a>
+<div class="col" id="ReturnsOrders" >
+  <a *ngIf="userName" (click)="logout()">logout</a>
+  <a *ngIf="!userName" routerLink="/cart">order</a>
 </div>
-<div class="col" id="Cart">
-  <img src="/assets/images/cart.svg" alt="">
-  <span class="counter">{{counter}}</span>
-  <span class="name">Cart</span>
+<div class="col" id="Cart" routerLink="/cart" >
+    <img src="/assets/images/cart.svg" alt="">
+    <span class="counter">{{counter}}</span>
+    <span class="name">Cart</span>
 </div>
