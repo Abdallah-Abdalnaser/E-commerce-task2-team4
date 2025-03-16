@@ -1,3 +1,5 @@
+<section>
+
 <h1 class="head" style="text-align: center;" *ngIf="totalItems > 0">Your Cart</h1>
 <div class="container">
   <div class="cart-container">
@@ -5,7 +7,7 @@
       <img [src]="item.images[0]" alt="{{ item.title }}" class="product-image" />
       <div class="product-details">
         <h2 class="head" style="font-size:20px;font-weight: 600; margin-bottom: 5px;">{{ item.title }}</h2>
-        <h3 class="head" style="font-size:20px;font-weight: 400;" >{{ item.description }}</h3>
+        <h3 class="head" style="font-size:0.8rem;font-weight: 400;" >{{ item.description }}</h3>
         <p class="item-details">Category:{{ item.category }}</p>
         <p class="item-details">Price: SAR{{ item.price }}</p>
         <p class="item-details">
@@ -38,3 +40,4 @@
     <span>No products found.</span>
   </div>
 </div>
+</section>

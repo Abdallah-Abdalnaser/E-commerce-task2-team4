@@ -32,7 +32,9 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    AppRoutingModule,MatButtonModule,MatDialogModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   exports: [
     HeaderComponent,
