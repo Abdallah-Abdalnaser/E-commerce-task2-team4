@@ -21,7 +21,7 @@
 #search .categories select {
   appearance: none;
   background-color: var(--Gray2);
-  padding: 0.7rem 0.6rem;
+  padding: 0.55rem 0.6rem;
   border-top-left-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
   border: 0px;
